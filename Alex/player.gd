@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y -= jump_impulse
+		coyote_time.start()
 		
 	if Input.is_action_pressed("move_right"):
 		velocity.x = speed
