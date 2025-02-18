@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnjs0xujgfe0i"]
+
+[ext_resource type="Script" path="res://Alex/player.gd" id="1_je5yj"]
+[ext_resource type="Texture2D" uid="uid://cpiycmhgijgxc" path="res://newEnemy2.png" id="2_7ouw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjci4"]
+size = Vector2(132, 132)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(187, 135)
+collision_layer = 2
+platform_floor_layers = 4294967294
+script = ExtResource("1_je5yj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 30)
+scale = Vector2(0.648333, 0.593333)
+texture = ExtResource("2_7ouw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 3
+position = Vector2(-2, 13)
+shape = SubResource("RectangleShape2D_mjci4")
+
+[node name="CoyoteTime" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
