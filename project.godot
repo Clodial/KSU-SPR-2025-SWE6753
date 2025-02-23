@@ -12,12 +12,17 @@ config_version=5
 
 config/name="KSU-SWE6753-GameDev"
 run/main_scene="res://test_level.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1200
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="KSU-SWE6753-GameDev"
 
 [input]
 
@@ -52,3 +57,5 @@ fast_fall={
 2d_render/layer_2="world"
 2d_physics/layer_1="player"
 2d_physics/layer_2="world"
+2d_physics/layer_3="player_1_collisions"
+2d_physics/layer_4="player_2_collisions"
