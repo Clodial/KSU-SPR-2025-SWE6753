@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="KSU-SWE6753-GameDev"
-run/main_scene="res://test_level.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://scenes/debug/test_level.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1200
+
+[dotnet]
+
+project/assembly_name="KSU-SWE6753-GameDev"
 
 [input]
 

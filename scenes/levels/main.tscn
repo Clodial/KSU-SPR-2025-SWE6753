@@ -10,12 +10,3 @@ start_level = ExtResource("2_8xa68")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("3_h8l4j")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 1076.0
-offset_top = 10.0
-offset_right = 1141.0
-offset_bottom = 41.0
-text = "Restart"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
