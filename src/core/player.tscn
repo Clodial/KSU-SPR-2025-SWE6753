@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnjs0xujgfe0i"]
 
 [ext_resource type="Script" path="res://Alex/player.gd" id="1_je5yj"]
-[ext_resource type="Texture2D" uid="uid://cpiycmhgijgxc" path="res://newEnemy2.png" id="2_7ouw7"]
+[ext_resource type="Texture2D" uid="uid://cpiycmhgijgxc" path="res://Art/newEnemy2.png" id="2_7ouw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjci4"]
 size = Vector2(132, 132)

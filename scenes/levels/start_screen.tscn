@@ -1,53 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6qild00ifl3h"]
+[gd_scene load_steps=2 format=3 uid="uid://b6qild00ifl3h"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_5nnh7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_87mq5"]
-radius = 5.10882
-
-[sub_resource type="BoxMesh" id="BoxMesh_bh0pn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uelsk"]
-size = Vector2(0.795403, 0.996158)
+[sub_resource type="SphereMesh" id="SphereMesh_sr0rw"]
 
 [node name="StartScreen" type="Node"]
 
-[node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(81, 64)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ball"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(102, 86)
 scale = Vector2(100, 100)
-mesh = SubResource("SphereMesh_5nnh7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_87mq5")
-
-[node name="Ramp" type="StaticBody2D" parent="."]
-position = Vector2(321, 407)
-rotation = -2.49484
-scale = Vector2(1000, 10)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ramp"]
-scale = Vector2(0.794, 1)
-mesh = SubResource("BoxMesh_bh0pn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramp"]
-position = Vector2(0.000716627, 0.0310555)
-shape = SubResource("RectangleShape2D_uelsk")
-
-[node name="Ramp2" type="StaticBody2D" parent="."]
-position = Vector2(944, 396)
-rotation = -3.82847
-scale = Vector2(1000, 10)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ramp2"]
-scale = Vector2(0.794, 1)
-mesh = SubResource("BoxMesh_bh0pn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramp2"]
-position = Vector2(0.000716627, 0.0310593)
-shape = SubResource("RectangleShape2D_uelsk")
+mesh = SubResource("SphereMesh_sr0rw")
