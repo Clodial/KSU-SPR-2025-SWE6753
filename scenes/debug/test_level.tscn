@@ -1,8 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtyt25j8a3pmo"]
 
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 [ext_resource type="Texture2D" uid="uid://cpiycmhgijgxc" path="res://assets/test/newEnemy2.png" id="1_3g3nm"]
 [ext_resource type="Script" path="res://scenes/demo/active_manager.gd" id="2_8dyp2"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://entitities/player/player.tscn" id="3_6fova"]
+========
+[ext_resource type="Texture2D" uid="uid://cpiycmhgijgxc" path="res://Art/newEnemy2.png" id="1_p7reo"]
+[ext_resource type="Script" path="res://src/utils/active_manager.gd" id="2_7mfun"]
+[ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://src/core/player.tscn" id="3_q7h3r"]
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv378"]
 size = Vector2(188.5, 219.578)
@@ -16,7 +22,11 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(118, 538)
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 texture = ExtResource("1_3g3nm")
+========
+texture = ExtResource("1_p7reo")
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(129, 513.578)
@@ -30,7 +40,11 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(118, 546)
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 texture = ExtResource("1_3g3nm")
+========
+texture = ExtResource("1_p7reo")
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(123, 520)
@@ -43,7 +57,11 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
 position = Vector2(12, 42)
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 texture = ExtResource("1_3g3nm")
+========
+texture = ExtResource("1_p7reo")
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(27, 19.7891)
@@ -57,7 +75,11 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
 position = Vector2(-18, 58)
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 texture = ExtResource("1_3g3nm")
+========
+texture = ExtResource("1_p7reo")
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(-6, 31)
@@ -70,21 +92,35 @@ collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
 position = Vector2(118, 538)
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 texture = ExtResource("1_3g3nm")
+========
+texture = ExtResource("1_p7reo")
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(132, 516)
 shape = SubResource("RectangleShape2D_tv378")
 
 [node name="active_manager" type="Node2D" parent="."]
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 script = ExtResource("2_8dyp2")
 
 [node name="Player" parent="active_manager" instance=ExtResource("3_6fova")]
+========
+script = ExtResource("2_7mfun")
+
+[node name="Player" parent="active_manager" instance=ExtResource("3_q7h3r")]
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 position = Vector2(544, 308)
 collision_layer = 1
 collision_mask = 2
 
+<<<<<<<< HEAD:scenes/demo/test_level.tscn
 [node name="Player2" parent="active_manager" instance=ExtResource("3_6fova")]
+========
+[node name="Player2" parent="active_manager" instance=ExtResource("3_q7h3r")]
+>>>>>>>> cc69e5b3197d571895c11590d226817e2628e46d:scenes/debug/test_level.tscn
 position = Vector2(331, 308)
 collision_layer = 1
 collision_mask = 2
