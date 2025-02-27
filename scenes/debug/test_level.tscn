@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="1_p7reo"]
 [ext_resource type="Script" path="res://src/utils/active_manager.gd" id="2_7mfun"]
-[ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://entitities/player/player.tscn" id="3_q7h3r"]
+[ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="3_q7h3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv378"]
 size = Vector2(188.5, 219.578)
