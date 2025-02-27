@@ -18,14 +18,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
 	handle_jump()
 	handle_movement(delta)
-		
 	move_and_slide()
 	
 func handle_jump() -> void:
-	if not is_on_floor():
+	if !is_on_floor():
 		if coyote_time.time_left == 0 && coyote_check == false:
 			coyote_time.start()
 			coyote_check = true
