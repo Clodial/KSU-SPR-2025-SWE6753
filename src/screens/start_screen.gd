@@ -15,12 +15,12 @@ func _process(delta: float) -> void:
 
 
 func _on_start_game_button_pressed() -> void:
-	pass # Replace with function body.
+	start_game.emit()
 
 
 func _on_exit_game_button_pressed() -> void:
-	pass # Replace with function body.
+	exit_game.emit()
 
 
 func _on_continue_game_button_pressed() -> void:
-	pass # Replace with function body.
+	continue_game.emit()
