@@ -120,4 +120,6 @@ theme_override_font_sizes/font_size = 64
 text = "Exit Game
 "
 
-[connection signal="pressed" from="HUD/StartGameButton" to="HUD" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="HUD/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="HUD/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
+[connection signal="pressed" from="HUD/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
