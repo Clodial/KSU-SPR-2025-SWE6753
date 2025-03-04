@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7u76uibw68f2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7u76uibw68f2"]
 
 [ext_resource type="Texture2D" uid="uid://bg53628dmv8ur" path="res://assets/test/testlogo.png" id="1_ecvft"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="1_qpich"]
+[ext_resource type="Script" path="res://src/screens/start_screen.gd" id="1_wosr8"]
 
 [sub_resource type="Theme" id="Theme_xjjmm"]
 Button/colors/font_color = Color(0.25098, 0.439216, 0.501961, 1)
@@ -14,22 +15,23 @@ Button/font_sizes/font_size = 64
 Button/fonts/font = ExtResource("1_qpich")
 
 [node name="StartScreen" type="Node"]
+script = ExtResource("1_wosr8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="HUD"]
 offset_right = 1917.0
 offset_bottom = 1087.0
 color = Color(0.839216, 0.854902, 0.827451, 1)
 
-[node name="GameLogo" type="TextureRect" parent="CanvasLayer"]
+[node name="GameLogo" type="TextureRect" parent="HUD"]
 offset_left = 300.0
 offset_top = 200.0
 offset_right = 800.0
 offset_bottom = 700.0
 texture = ExtResource("1_ecvft")
 
-[node name="StartGameButton" type="Button" parent="CanvasLayer"]
+[node name="StartGameButton" type="Button" parent="HUD"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -52,7 +54,7 @@ theme_override_font_sizes/font_size = 64
 text = "Start Game
 "
 
-[node name="ContinueGameButton" type="Button" parent="CanvasLayer"]
+[node name="ContinueGameButton" type="Button" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -72,7 +74,7 @@ theme_override_font_sizes/font_size = 64
 text = "Continue Game
 "
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer"]
+[node name="SettingsButton" type="Button" parent="HUD"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -95,7 +97,7 @@ theme_override_font_sizes/font_size = 64
 text = "Settings
 "
 
-[node name="ExitGameButton" type="Button" parent="CanvasLayer"]
+[node name="ExitGameButton" type="Button" parent="HUD"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -117,3 +119,7 @@ theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
 text = "Exit Game
 "
+
+[connection signal="pressed" from="HUD/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="HUD/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
+[connection signal="pressed" from="HUD/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
