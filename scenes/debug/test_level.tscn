@@ -46,6 +46,7 @@ collision_visibility_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("3_q7h3r")]
 position = Vector2(1389, 564)
+scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("3_q7h3r")]
 position = Vector2(499, 623)
