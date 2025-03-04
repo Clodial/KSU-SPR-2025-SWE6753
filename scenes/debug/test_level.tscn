@@ -45,8 +45,7 @@ tile_set = SubResource("TileSet_d2i2b")
 collision_visibility_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("3_q7h3r")]
-position = Vector2(108, 409)
-scale = Vector2(0.4, 0.4)
+
 
 [node name="Player2" parent="." instance=ExtResource("3_q7h3r")]
 position = Vector2(499, 623)
