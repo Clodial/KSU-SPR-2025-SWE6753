@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://dtyt25j8a3pmo"]
+[gd_scene load_steps=7 format=4 uid="uid://dtyt25j8a3pmo"]
 
+[ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://moving_platform.tscn" id="3_ka8gs"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="3_q7h3r"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="3_q15up"]
 
@@ -51,3 +52,7 @@ collision_visibility_mode = 1
 position = Vector2(499, 623)
 scale = Vector2(0.4, 0.4)
 playerOne = false
+
+[node name="Path2D" parent="." instance=ExtResource("3_ka8gs")]
+position = Vector2(180, 916)
+loop = false

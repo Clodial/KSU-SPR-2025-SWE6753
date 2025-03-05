@@ -1,8 +1,9 @@
+
 [gd_scene load_steps=8 format=3 uid="uid://b72oibj0wm0pj"]
+
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
-[ext_resource type="Script" path="res://src/utils/SceneManager.cs" id="3_h8l4j"]
 [ext_resource type="PackedScene" uid="uid://bjofmlf2om3ck" path="res://scenes/menus/LevelSelect.tscn" id="3_x3aa7"]
 [ext_resource type="PackedScene" uid="uid://dtyt25j8a3pmo" path="res://scenes/debug/test_level.tscn" id="4_20ne4"]
 [ext_resource type="AudioStream" uid="uid://eadx08hgnhgp" path="res://assets/music/FocusManagement.wav" id="6_0ja35"]
@@ -15,6 +16,7 @@ level_select_screen = ExtResource("3_x3aa7")
 test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
+
 script = ExtResource("3_h8l4j")
 
 [node name="Levels" type="Node" parent="."]
@@ -24,3 +26,4 @@ stream = ExtResource("6_0ja35")
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1epkp")
+
