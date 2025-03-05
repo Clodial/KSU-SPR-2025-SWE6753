@@ -67,6 +67,7 @@ size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
 
 [node name="levelButton" type="TextureButton" parent="level_picker/level1"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
