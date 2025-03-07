@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8dqt68lwslx6"]
+
+[ext_resource type="Script" path="res://src/enemy/Enemy.cs" id="1_pxxj3"]
+[ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="1_q7b5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_movkw"]
+size = Vector2(131, 132)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 2
+position = Vector2(681, 158)
+collision_mask = 2
+script = ExtResource("1_pxxj3")
+raycastNodePathRight = NodePath("RayCast2D-Right")
+raycastNodePathLeft = NodePath("RayCast2D-Left")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 30)
+scale = Vector2(0.648333, 0.593333)
+texture = ExtResource("1_q7b5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 2
+position = Vector2(-1.5, 12)
+shape = SubResource("RectangleShape2D_movkw")
+
+[node name="RayCast2D-Right" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RayCast2D-Left" type="RayCast2D" parent="."]
+target_position = Vector2(-100, 0)
+collision_mask = 2
+collide_with_areas = true

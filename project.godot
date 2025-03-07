@@ -12,7 +12,7 @@ config_version=5
 
 config/name="KSU-SWE6753-GameDev"
 run/main_scene="res://scenes/debug/test_level.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://assets/test/icon.svg"
 <<<<<<<HEADrun/main_scene="res://scenes/levels/main.tscn"
 
@@ -56,6 +56,7 @@ fast_fall={
 
 2d_render/layer_1="player"
 2d_render/layer_2="world"
+2d_render/layer_3="enemy"
 2d_physics/layer_1="player"
 2d_physics/layer_2="world"
 2d_physics/layer_3="player_1_collisions"
