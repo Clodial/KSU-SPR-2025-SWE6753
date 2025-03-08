@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="KSU-SWE6753-GameDev"
-run/main_scene="res://scenes/debug/test_level.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://scenes/levels/main.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://assets/test/icon.svg"
 <<<<<<<HEADrun/main_scene="res://scenes/levels/main.tscn"
 
