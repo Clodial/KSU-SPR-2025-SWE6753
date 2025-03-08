@@ -1,22 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://q0w4io34wy7m"]
 
 [ext_resource type="Script" path="res://src/core/goal.gd" id="1_gqks2"]
-[ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="2_o46ku"]
+[ext_resource type="Texture2D" uid="uid://cy485d6ux53ll" path="res://assets/test/test_goal_post.png" id="2_8ayxn"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ack0"]
-radius = 84.0
-height = 374.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt1m3"]
+size = Vector2(64, 99.9998)
 
 [node name="Goal" type="Area2D"]
 script = ExtResource("1_gqks2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(585, 308)
-texture = ExtResource("2_o46ku")
+texture = ExtResource("2_8ayxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(592, 271)
 scale = Vector2(1, 0.640001)
-shape = SubResource("CapsuleShape2D_8ack0")
+shape = SubResource("RectangleShape2D_nt1m3")
 
 [connection signal="body_entered" from="." to="." method="_on_Goal_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
