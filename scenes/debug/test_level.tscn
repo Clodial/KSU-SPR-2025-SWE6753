@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dtyt25j8a3pmo"]
+[gd_scene load_steps=8 format=4 uid="uid://dtyt25j8a3pmo"]
 
 [ext_resource type="PackedScene" uid="uid://bq4vhjndlpxhp" path="res://scenes/entitities/enemy.tscn" id="1_62ubh"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="3_q7h3r"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="3_q15up"]
+[ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="4_unr2x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_titj5"]
 
@@ -51,3 +52,6 @@ tile_set = SubResource("TileSet_d2i2b")
 position = Vector2(499, 623)
 scale = Vector2(0.4, 0.4)
 playerOne = false
+
+[node name="RotateableObjectPlatform" parent="." instance=ExtResource("4_unr2x")]
+position = Vector2(666, 886)
