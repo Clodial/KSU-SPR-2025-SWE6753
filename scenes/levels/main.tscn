@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=9 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/utils/SceneManager.cs" id="5_angnu"]
 [ext_resource type="AudioStream" uid="uid://eadx08hgnhgp" path="res://assets/music/FocusManagement.wav" id="6_0ja35"]
 [ext_resource type="AudioStream" uid="uid://cixqwp5h2i2sb" path="res://assets/music/waitingRoom.wav" id="7_1epkp"]
+[ext_resource type="AudioStream" uid="uid://sbppg47fwcxf" path="res://assets/music/FocusUpServe.wav" id="8_o1i2l"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8x5c7")
@@ -24,3 +25,7 @@ stream = ExtResource("6_0ja35")
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1epkp")
+
+[node name="level_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_o1i2l")
+volume_db = -11.829
