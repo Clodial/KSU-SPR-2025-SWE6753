@@ -61,4 +61,4 @@ position = Vector2(159, 900)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("3_lajsc")]
-position = Vector2(1122, 910)
+position = Vector2(1135, 910)

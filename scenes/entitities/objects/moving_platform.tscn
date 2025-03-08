@@ -10,7 +10,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckdi3"]
-size = Vector2(82.1697, 94.621)
+size = Vector2(37.9926, 94.621)
 
 [sub_resource type="Animation" id="Animation_5cryv"]
 length = 0.001
@@ -55,33 +55,23 @@ curve = SubResource("Curve2D_ovkeo")
 script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-<<<<<<< HEAD
 position = Vector2(-179, -17)
 rotation = -1.56722
-=======
-position = Vector2(-7, -7)
-rotation = 0.0195097
->>>>>>> 614d497d022c95132439ddd360d9c71f676ab76d
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-<<<<<<< HEAD
 position = Vector2(-179, -17)
 rotation = -1.56722
-=======
-position = Vector2(-7, -7)
-rotation = 0.0195097
->>>>>>> 614d497d022c95132439ddd360d9c71f676ab76d
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.5)
 texture = ExtResource("2_hss4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(2.67754, -16.5554)
+position = Vector2(1.94641, -16.5554)
 shape = SubResource("RectangleShape2D_ckdi3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

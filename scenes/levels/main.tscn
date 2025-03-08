@@ -28,4 +28,3 @@ stream = ExtResource("7_1epkp")
 
 [node name="level_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_o1i2l")
-volume_db = -11.829

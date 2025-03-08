@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjofmlf2om3ck"]
+[gd_scene load_steps=8 format=3 uid="uid://bjofmlf2om3ck"]
 
 [ext_resource type="Script" path="res://src/screens/level_select.gd" id="1_euc36"]
 [ext_resource type="Texture2D" uid="uid://cegieonx0i0by" path="res://assets/test/level_pick_icon.png" id="2_1yqvu"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
 [ext_resource type="PackedScene" uid="uid://byxgckuldoh0p" path="res://scenes/levels/level1-1.tscn" id="2_xqra0"]
+[ext_resource type="PackedScene" uid="uid://cle7yxsipty7j" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
 [ext_resource type="Texture2D" uid="uid://d3c71mmdtn366" path="res://assets/test/level_hover_icon.png" id="3_66a6e"]
 [ext_resource type="Texture2D" uid="uid://c4idvrp35jplq" path="res://assets/test/level_disabled_icon.png" id="4_jeo6w"]
 
@@ -12,6 +13,9 @@ script = ExtResource("1_euc36")
 level_1 = ExtResource("2_xqra0")
 level_1_text = "Humble Beginnings"
 level_1_active = true
+level_2 = ExtResource("3_30ys2")
+level_2_text = "Long Corridors"
+level_2_active = true
 
 [node name="background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -90,6 +94,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
+
+[node name="levelButton2" type="TextureButton" parent="level_picker/level2"]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_1yqvu")
+texture_pressed = ExtResource("2_1yqvu")
+texture_hover = ExtResource("3_66a6e")
+texture_disabled = ExtResource("4_jeo6w")
 
 [node name="level3" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
@@ -189,4 +203,7 @@ vertical_alignment = 1
 [connection signal="button_down" from="level_picker/level1/levelButton" to="." method="_on_level_button_button_down"]
 [connection signal="mouse_entered" from="level_picker/level1/levelButton" to="." method="_on_level_button_mouse_entered"]
 [connection signal="mouse_exited" from="level_picker/level1/levelButton" to="." method="_on_level_button_mouse_exited"]
+[connection signal="mouse_entered" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_mouse_exited"]
+[connection signal="pressed" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_pressed"]
 [connection signal="button_down" from="main_menu_button" to="." method="_on_main_menu_button_button_down"]
