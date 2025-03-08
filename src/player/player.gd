@@ -9,6 +9,7 @@ var screen_size
 @export var terminal_gravity = 500
 @onready var coyote_time = $CoyoteTime
 @export var playerOne = true
+@export var push_force: float = 200.0
 var coyote_check
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +21,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement(delta)
-	move_and_slide()
+	var collision_count = move_and_slide()
+	if collision_count:
+		for i in get_slide_collision_count():
+			var collision = self.get_slide_collision(i)
+			var collider = collision.get_collider()
+
+			# Check if the collider is a RigidBody2D
+			if collider is RigidBody2D:
+						 # Apply an impulse (a sudden force) in the opposite direction of the collision normal
+				collider.apply_central_impulse(-collision.get_normal() * push_force)
 	
 func handle_jump() -> void:
 	if !is_on_floor():

@@ -8,7 +8,7 @@ size = Vector2(132, 132)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
-collision_mask = 2
+collision_mask = 6
 platform_floor_layers = 4294967294
 script = ExtResource("1_je5yj")
 
