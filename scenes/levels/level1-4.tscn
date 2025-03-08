@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://bu2ml1xuloj8u"]
+[gd_scene load_steps=9 format=4 uid="uid://bu2ml1xuloj8u"]
 
+[ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_jdn3u"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_qcisw"]
 [ext_resource type="PackedScene" uid="uid://3qrxgbsp3wlj" path="res://scenes/entitities/objects/moving_platform.tscn" id="2_itwwl"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="3_x7v1h"]
@@ -42,6 +43,7 @@ _data = {
 point_count = 2
 
 [node name="level1-4" type="Node2D"]
+script = ExtResource("1_jdn3u")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 74)

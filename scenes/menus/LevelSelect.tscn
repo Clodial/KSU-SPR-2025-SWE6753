@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjofmlf2om3ck"]
+[gd_scene load_steps=10 format=3 uid="uid://bjofmlf2om3ck"]
 
 [ext_resource type="Script" path="res://src/screens/level_select.gd" id="1_euc36"]
 [ext_resource type="Texture2D" uid="uid://cegieonx0i0by" path="res://assets/test/level_pick_icon.png" id="2_1yqvu"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
 [ext_resource type="PackedScene" uid="uid://byxgckuldoh0p" path="res://scenes/levels/level1-1.tscn" id="2_xqra0"]
-[ext_resource type="PackedScene" uid="uid://cle7yxsipty7j" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
+[ext_resource type="PackedScene" uid="uid://bnuc8ntqp8c0l" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
 [ext_resource type="Texture2D" uid="uid://d3c71mmdtn366" path="res://assets/test/level_hover_icon.png" id="3_66a6e"]
 [ext_resource type="Texture2D" uid="uid://c4idvrp35jplq" path="res://assets/test/level_disabled_icon.png" id="4_jeo6w"]
+[ext_resource type="PackedScene" uid="uid://cwcpkqetj8l1a" path="res://scenes/levels/level1-3.tscn" id="4_rijkg"]
+[ext_resource type="PackedScene" uid="uid://bu2ml1xuloj8u" path="res://scenes/levels/level1-4.tscn" id="5_nwck8"]
 
 [node name="LevelSelect" type="Node"]
 script = ExtResource("1_euc36")
@@ -16,6 +18,11 @@ level_1_active = true
 level_2 = ExtResource("3_30ys2")
 level_2_text = "Long Corridors"
 level_2_active = true
+level_3 = ExtResource("4_rijkg")
+level_3_text = "Physical Bounds"
+level_4 = ExtResource("5_nwck8")
+level_4_text = "Elevated Aspirations"
+level_4_active = true
 
 [node name="background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -96,6 +103,7 @@ size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
 
 [node name="levelButton2" type="TextureButton" parent="level_picker/level2"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
@@ -119,6 +127,16 @@ grow_vertical = 2
 size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
 
+[node name="levelButton3" type="TextureButton" parent="level_picker/level3"]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_1yqvu")
+texture_pressed = ExtResource("2_1yqvu")
+texture_hover = ExtResource("3_66a6e")
+texture_disabled = ExtResource("4_jeo6w")
+
 [node name="level4" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -134,6 +152,16 @@ size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="levelButton4" type="TextureButton" parent="level_picker/level4"]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_1yqvu")
+texture_pressed = ExtResource("2_1yqvu")
+texture_hover = ExtResource("3_66a6e")
+texture_disabled = ExtResource("4_jeo6w")
+
 [node name="level5" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,6 +176,16 @@ grow_vertical = 2
 size_flags_horizontal = 0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="levelButton5" type="TextureButton" parent="level_picker/level5"]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_1yqvu")
+texture_pressed = ExtResource("2_1yqvu")
+texture_hover = ExtResource("3_66a6e")
+texture_disabled = ExtResource("4_jeo6w")
 
 [node name="main_menu_button" type="Button" parent="."]
 offset_left = 1378.0
@@ -206,4 +244,10 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_mouse_entered"]
 [connection signal="mouse_exited" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_mouse_exited"]
 [connection signal="pressed" from="level_picker/level2/levelButton2" to="." method="_on_level_button_2_pressed"]
+[connection signal="mouse_entered" from="level_picker/level3/levelButton3" to="." method="_on_level_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="level_picker/level3/levelButton3" to="." method="_on_level_button_3_mouse_exited"]
+[connection signal="pressed" from="level_picker/level3/levelButton3" to="." method="_on_level_button_3_pressed"]
+[connection signal="mouse_entered" from="level_picker/level4/levelButton4" to="." method="_on_level_button_4_mouse_entered"]
+[connection signal="mouse_exited" from="level_picker/level4/levelButton4" to="." method="_on_level_button_4_mouse_exited"]
+[connection signal="pressed" from="level_picker/level4/levelButton4" to="." method="_on_level_button_4_pressed"]
 [connection signal="button_down" from="main_menu_button" to="." method="_on_main_menu_button_button_down"]
