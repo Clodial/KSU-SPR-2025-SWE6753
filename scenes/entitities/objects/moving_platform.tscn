@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3qrxgbsp3wlj"]
+[gd_scene load_steps=8 format=3 uid="uid://disje1roesrxw"]
 
 [ext_resource type="Script" path="res://src/core/moving_platform.gd" id="1_yfvxk"]
 [ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="2_hss4d"]
 
 [sub_resource type="Curve2D" id="Curve2D_ovkeo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -7, -7, 0, 0, 0, 0, 403, 1)
+"points": PackedVector2Array(0, 0, 0, 0, -179, -17, 0, 0, 0, 0, -178, -297)
 }
 point_count = 2
 
@@ -55,15 +55,25 @@ curve = SubResource("Curve2D_ovkeo")
 script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+<<<<<<< HEAD
+position = Vector2(-179, -17)
+rotation = -1.56722
+=======
 position = Vector2(-7, -7)
 rotation = 0.0195097
+>>>>>>> 614d497d022c95132439ddd360d9c71f676ab76d
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+<<<<<<< HEAD
+position = Vector2(-179, -17)
+rotation = -1.56722
+=======
 position = Vector2(-7, -7)
 rotation = 0.0195097
+>>>>>>> 614d497d022c95132439ddd360d9c71f676ab76d
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
