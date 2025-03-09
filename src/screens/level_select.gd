@@ -18,6 +18,9 @@ signal select_level_4
 @export var level_4_text: String
 @export var level_4_active: bool
 signal select_level_5
+@export var level_5: PackedScene
+@export var level_5_text: String
+@export var level_5_active: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -58,6 +61,14 @@ func _on_level_button_4_pressed() -> void:
 	if(level_4_active):
 		select_level_4.emit()
 func _on_level_button_4_mouse_exited() -> void:
+	$sub_level_label.text = ""
+	
+func _on_level_button_5_pressed() -> void:
+	if(level_5_active):
+		select_level_5.emit()
+func _on_level_button_5_mouse_entered() -> void:
+	$sub_level_label.text = level_5_text
+func _on_level_button_5_mouse_exited() -> void:
 	$sub_level_label.text = ""
 	
 func _on_main_menu_button_button_down() -> void:

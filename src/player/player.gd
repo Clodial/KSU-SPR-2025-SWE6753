@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+signal enemy_collision
+
 var screen_size
 @export var speed = 400
 @export var jump_impulse = 700
@@ -26,11 +28,11 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision = self.get_slide_collision(i)
 			var collider = collision.get_collider()
-
 			# Check if the collider is a RigidBody2D
 			if collider is RigidBody2D:
 						 # Apply an impulse (a sudden force) in the opposite direction of the collision normal
 				collider.apply_central_impulse(-collision.get_normal() * push_force)
+			
 	
 func handle_jump() -> void:
 	if !is_on_floor():
@@ -57,3 +59,8 @@ func handle_movement(delta) -> void:
 	elif not horizontal_direction:
 		velocity.x = move_toward(velocity.x, 0, speed * 0.5) #gradual deceleration when not sliding
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		enemy_collision.emit();
