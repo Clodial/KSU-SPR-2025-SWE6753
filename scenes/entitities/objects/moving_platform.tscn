@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ovkeo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -179, -17, 0, 0, 0, 0, -179, 160)
+"points": PackedVector2Array(0, 0, 0, 0, 537, 86, 0, 0, 0, 0, -788, 83)
 }
 point_count = 2
 
@@ -55,15 +55,16 @@ curve = SubResource("Curve2D_ovkeo")
 script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-179, -17)
-rotation = -1.56722
+position = Vector2(537, 86)
+rotation = 1.5708
+rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(-179, -17)
-rotation = -1.56722
+position = Vector2(537, 86)
+rotation = 1.5708
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
