@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3qrxgbsp3wlj"]
+[gd_scene load_steps=8 format=3 uid="uid://disje1roesrxw"]
 
 [ext_resource type="Script" path="res://src/core/moving_platform.gd" id="1_yfvxk"]
 [ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="2_hss4d"]
@@ -56,14 +56,14 @@ script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-179, -17)
-rotation = -1.56722
+rotation = 1.5708
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(-179, -17)
-rotation = -1.56722
+rotation = 1.5708
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
