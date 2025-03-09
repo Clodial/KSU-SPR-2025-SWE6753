@@ -47,10 +47,10 @@ tile_map_data = PackedByteArray("AAAAAB4AAAAAAAAAAAABAB4AAAABAAAAAAACAB4AAAAAAAA
 tile_set = SubResource("TileSet_d2i2b")
 
 [node name="Player" parent="." instance=ExtResource("3_q7h3r")]
+position = Vector2(117, 371)
 
 [node name="Player2" parent="." instance=ExtResource("3_q7h3r")]
 position = Vector2(499, 623)
-scale = Vector2(0.4, 0.4)
 playerOne = false
 
 [node name="RotateableObjectPlatform" parent="." instance=ExtResource("4_unr2x")]

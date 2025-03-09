@@ -16,13 +16,13 @@ level_1 = ExtResource("2_xqra0")
 level_1_text = "Humble Beginnings"
 level_1_active = true
 level_2 = ExtResource("3_30ys2")
-level_2_text = "Table Tennis"
+level_2_text = "Back-to-Back Meetings"
 level_2_active = true
 level_3 = ExtResource("4_rijkg")
 level_3_text = "Sisyphean Roundabout"
 level_3_active = true
 level_4 = ExtResource("5_nwck8")
-level_4_text = "Elevated Aspirations"
+level_4_text = "Elevated Expectations"
 level_4_active = true
 
 [node name="background" type="ColorRect" parent="."]

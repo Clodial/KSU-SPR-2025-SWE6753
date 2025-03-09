@@ -21,6 +21,7 @@ signal select_level_5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$main_level_label.text = "Sprint 1 demo levels"
 	$sub_level_label.text = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
