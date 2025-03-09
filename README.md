@@ -24,6 +24,11 @@ This project is a 2D platformer game developed using the Godot Engine. The game 
 - **Arrow Keys**: Move left and right
 - **Space**: Jump
 
+## Credits
+- Adam Salam
+- Alex Smith
+- Matthew Maravilla
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
