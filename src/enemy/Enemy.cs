@@ -60,7 +60,7 @@ public partial class Enemy : CharacterBody2D
 			// The object that was hit (TileMap, StaticBody2D, etc.)
 			object collider = _rayCastRight.GetCollider();
 
-			if(collider.ToString() == "<TileMapLayer#29628564795>"){
+			if(collider.ToString().Contains("TileMapLayer")){
 				collisionNotLocked = false;
 				horizontalDirection = -1f;
 			}
@@ -71,7 +71,7 @@ public partial class Enemy : CharacterBody2D
 			// The object that was hit (TileMap, StaticBody2D, etc.)
 			object collider = _rayCastLeft.GetCollider();
 
-			if(collider.ToString() == "<TileMapLayer#29628564795>"){
+			if(collider.ToString().Contains("TileMapLayer")){
 				collisionNotLocked = false;
 				horizontalDirection = 1f;
 			}

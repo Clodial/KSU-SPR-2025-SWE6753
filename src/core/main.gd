@@ -39,6 +39,7 @@ func _go_to_level_select() -> void:
 	level_select.select_level_2.connect(self._go_to_level.bind(level_select.level_2));
 	level_select.select_level_3.connect(self._go_to_level.bind(level_select.level_3));
 	level_select.select_level_4.connect(self._go_to_level.bind(level_select.level_4));
+	level_select.select_level_5.connect(self._go_to_level.bind(level_select.level_5));
 	$SceneManager.SetCurrentScene(level_select)
 	$menu_music.stop();
 	$level_select_music.play();
@@ -69,6 +70,8 @@ func _go_to_level(level) -> void:
 	$Levels.add_child(newLevel);
 	$SceneManager.SetCurrentScene(newLevel)
 	newLevel.level_win.connect(self._go_to_level_select.bind());
+	newLevel.level_lose.connect(self._go_to_level.bind(level));
 	$level_select_music.stop();
 	$menu_music.stop();
 	$level_music.play();
+	
