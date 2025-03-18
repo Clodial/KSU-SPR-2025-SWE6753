@@ -55,7 +55,7 @@ curve = SubResource("Curve2D_ovkeo")
 script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(537, 86)
+position = Vector2(-149, -150)
 rotation = 1.5708
 rotates = false
 
