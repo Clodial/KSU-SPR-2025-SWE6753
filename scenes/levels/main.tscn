@@ -26,6 +26,7 @@ script = ExtResource("6_qxmbo")
 
 [node name="level_select_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_i7sl5")
+volume_db = 15.0
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1epkp")
