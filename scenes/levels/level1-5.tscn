@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c462y8xtfsc2g"]
+[gd_scene load_steps=8 format=4 uid="uid://b112me52g52ks"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_hb6fw"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="2_77saq"]
@@ -22,6 +22,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_l3mdp")
 
 [node name="Level1-5" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_hb6fw")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

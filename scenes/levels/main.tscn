@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=12 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -8,8 +8,21 @@
 [ext_resource type="AudioStream" uid="uid://eadx08hgnhgp" path="res://assets/music/FocusManagement.wav" id="6_0ja35"]
 [ext_resource type="AudioStream" uid="uid://cixqwp5h2i2sb" path="res://assets/music/waitingRoom.wav" id="7_1epkp"]
 [ext_resource type="AudioStream" uid="uid://sbppg47fwcxf" path="res://assets/music/FocusUpServe.wav" id="8_o1i2l"]
+[ext_resource type="Script" path="res://src/utils/PauseMenu.cs" id="9_8ut3p"]
+[ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="10_f3fv4"]
+
+[sub_resource type="Theme" id="Theme_lakch"]
+Button/colors/font_color = Color(0.25098, 0.439216, 0.501961, 1)
+Button/colors/font_disabled_color = Color(0.984314, 0.72549, 0.329412, 1)
+Button/colors/font_pressed_color = Color(0.984314, 0.72549, 0.329412, 1)
+Button/colors/icon_disabled_color = Color(0.25098, 0.439216, 0.501961, 1)
+Button/colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
+Button/colors/icon_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("10_f3fv4")
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_8x5c7")
 start_level = ExtResource("2_hltfq")
 level_select_screen = ExtResource("3_x3aa7")
@@ -28,3 +41,110 @@ stream = ExtResource("7_1epkp")
 
 [node name="level_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_o1i2l")
+
+[node name="PauseMenu" type="Node" parent="." node_paths=PackedStringArray("sceneManager", "hud")]
+script = ExtResource("9_8ut3p")
+sceneManager = NodePath("../SceneManager")
+hud = NodePath("HUD")
+
+[node name="HUD" type="CanvasLayer" parent="PauseMenu"]
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/HUD"]
+offset_left = 682.0
+offset_top = 318.0
+offset_right = 1256.0
+offset_bottom = 783.0
+color = Color(0.839216, 0.854902, 0.827451, 1)
+
+[node name="ContinueGameButton" type="Button" parent="PauseMenu/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1225.0
+offset_top = 336.0
+offset_right = -675.0
+offset_bottom = 436.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme = SubResource("Theme_lakch")
+theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
+theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_fonts/font = ExtResource("10_f3fv4")
+theme_override_font_sizes/font_size = 64
+text = "Continue Game
+"
+
+[node name="SettingsButton" type="Button" parent="PauseMenu/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1225.0
+offset_top = -92.0
+offset_right = -675.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_lakch")
+theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
+theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_fonts/font = ExtResource("10_f3fv4")
+theme_override_font_sizes/font_size = 64
+text = "Settings
+"
+
+[node name="LevelsButton" type="Button" parent="PauseMenu/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1225.0
+offset_top = 18.0
+offset_right = -675.0
+offset_bottom = 118.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_lakch")
+theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
+theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_fonts/font = ExtResource("10_f3fv4")
+theme_override_font_sizes/font_size = 64
+text = "Level Select"
+
+[node name="ExitGameButton" type="Button" parent="PauseMenu/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1224.0
+offset_top = 129.0
+offset_right = -674.0
+offset_bottom = 229.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_lakch")
+theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
+theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
+theme_override_fonts/font = ExtResource("10_f3fv4")
+theme_override_font_sizes/font_size = 64
+text = "Exit Game"
+
+[connection signal="ExitGame" from="PauseMenu" to="." method="_on_exit_game"]
+[connection signal="LevelSelect" from="PauseMenu" to="." method="_go_to_level_select"]
+[connection signal="pressed" from="PauseMenu/HUD/ContinueGameButton" to="PauseMenu" method="OnContinueGame"]
+[connection signal="pressed" from="PauseMenu/HUD/LevelsButton" to="PauseMenu" method="OnLevelSelect"]
+[connection signal="pressed" from="PauseMenu/HUD/ExitGameButton" to="PauseMenu" method="OnExitGame"]
