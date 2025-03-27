@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3qrxgbsp3wlj"]
+[gd_scene load_steps=8 format=3 uid="uid://disje1roesrxw"]
 
 [ext_resource type="Script" path="res://src/core/moving_platform.gd" id="1_yfvxk"]
 [ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="2_hss4d"]
 
 [sub_resource type="Curve2D" id="Curve2D_ovkeo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -149, -150, 0, 0, 0, 0, -151, 203)
+"points": PackedVector2Array(0, 0, 0, 0, 537, 86, 0, 0, 0, 0, -788, 83)
 }
 point_count = 2
 
@@ -55,7 +55,7 @@ curve = SubResource("Curve2D_ovkeo")
 script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-149, -150)
+position = Vector2(537, 86)
 rotation = 1.5708
 rotates = false
 

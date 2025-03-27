@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	if ( player_goal == 2 && level_finish == false):
 		level_finish = true;
 		level_win.emit()
-	
 
 func _goal_touch() -> void:
 	player_goal += 1;

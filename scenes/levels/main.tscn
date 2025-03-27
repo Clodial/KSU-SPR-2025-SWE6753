@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=9 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
 [ext_resource type="PackedScene" uid="uid://bjofmlf2om3ck" path="res://scenes/menus/LevelSelect.tscn" id="3_x3aa7"]
 [ext_resource type="PackedScene" uid="uid://dtyt25j8a3pmo" path="res://scenes/debug/test_level.tscn" id="4_20ne4"]
 [ext_resource type="Script" path="res://src/utils/SceneManager.cs" id="5_angnu"]
-[ext_resource type="Script" path="res://src/utils/PlayerProgress.gd" id="6_qxmbo"]
+[ext_resource type="AudioStream" uid="uid://eadx08hgnhgp" path="res://assets/music/FocusManagement.wav" id="6_0ja35"]
 [ext_resource type="AudioStream" uid="uid://cteqh46krwek" path="res://assets/music/waitingRoom.wav" id="7_1epkp"]
-[ext_resource type="AudioStream" uid="uid://bcxy4o2gxx8pi" path="res://assets/music/coffeeShop.wav" id="7_i7sl5"]
-[ext_resource type="AudioStream" uid="uid://c5df384yldclt" path="res://assets/music/ReturnOffer.wav" id="9_iarq8"]
+[ext_resource type="AudioStream" uid="uid://sbppg47fwcxf" path="res://assets/music/FocusUpServe.wav" id="8_o1i2l"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8x5c7")
@@ -19,17 +18,13 @@ test_level = ExtResource("4_20ne4")
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("5_angnu")
 
-[node name="PersistantData" type="Node" parent="." groups=["GameData"]]
-script = ExtResource("6_qxmbo")
-
 [node name="Levels" type="Node" parent="."]
 
 [node name="level_select_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_i7sl5")
-volume_db = 15.0
+stream = ExtResource("6_0ja35")
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1epkp")
 
 [node name="level_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_iarq8")
+stream = ExtResource("8_o1i2l")

@@ -4,7 +4,6 @@ extends Node
 @export var level_select_screen: PackedScene
 @export var test_level: PackedScene
 var level_to_load
-var current_game_progress
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +15,8 @@ func _ready() -> void:
 	start_game_level.exit_game.connect(self._on_exit_game.bind())
 	$menu_music.play();
 	$level_select_music.stop();
-	current_game_progress = $PersistantData.get_progress()
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
