@@ -1,7 +1,7 @@
 extends Node
 
 var lives = 3
-
+signal level_is_lost
 
 func ready():
 	var player = $"../Player"
@@ -16,6 +16,8 @@ func lose_life():
 	if lives > 0:
 		lives -= 1
 		print("Lives Remaining: " + str(lives))
+	elif lives == 0:
+		level_is_lost.emit()
 
 func _on_player_lost_life() -> void:
 	lose_life()

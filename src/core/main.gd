@@ -4,6 +4,7 @@ extends Node
 @export var level_select_screen: PackedScene
 @export var test_level: PackedScene
 var level_to_load
+var lives = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
