@@ -28,9 +28,7 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision = self.get_slide_collision(i)
 			var collider = collision.get_collider()
-			# Check if the collider is a RigidBody2D
 			if collider is RigidBody2D:
-						 # Apply an impulse (a sudden force) in the opposite direction of the collision normal
 				collider.apply_central_impulse(-collision.get_normal() * push_force)
 			
 	
