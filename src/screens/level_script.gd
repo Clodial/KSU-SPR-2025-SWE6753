@@ -15,6 +15,8 @@ func _ready() -> void:
 	$Goal_P2.player_out.connect(self._goal_leave.bind())
 	$Player.enemy_collision.connect(self._process_level_lose.bind())
 	$Player2.enemy_collision.connect(self._process_level_lose.bind())
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

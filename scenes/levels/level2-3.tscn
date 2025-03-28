@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://npedm77ckqrv"]
+[gd_scene load_steps=10 format=4 uid="uid://br0pvmlphmmed"]
 
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_7ng8w"]
 [ext_resource type="PackedScene" uid="uid://3qrxgbsp3wlj" path="res://scenes/entitities/objects/moving_platform.tscn" id="2_iqyhc"]
@@ -54,6 +54,7 @@ _data = {
 point_count = 2
 
 [node name="Node2D" type="Node2D"]
+process_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 74)
