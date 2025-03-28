@@ -6,20 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="2_vphga"]
 
 [node name="Level1-1" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_l2r6b")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_top = -186.0
-offset_right = 1981.0
-offset_bottom = 1053.0
-color = Color(0.435294, 0.866667, 0.835294, 1)
-
-[node name="blueRect" type="ColorRect" parent="."]
-offset_left = -66.0
-offset_top = -184.0
-offset_right = 988.0
-offset_bottom = 1055.0
-color = Color(0.968627, 0.780392, 0.545098, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 32)

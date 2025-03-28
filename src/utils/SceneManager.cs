@@ -5,7 +5,13 @@ public partial class SceneManager : Node
 {
 	private static Node CurrentScene;
 
-	public void SetCurrentScene(Node scene){
+	public Node GetCurrentScene()
+	{
+		return CurrentScene;
+	}
+
+	public void SetCurrentScene(Node scene)
+	{
 		if (scene == null){
 			GD.Print("Cannot set current scene. The scene argument is null.");
 			return;
@@ -14,7 +20,8 @@ public partial class SceneManager : Node
 		CurrentScene = scene;
 	}
 
-	public static void RestartScene(){
+	public static void RestartScene()
+	{
 		GD.Print("Restart Scene!");
 		if (CurrentScene == null){
 			GD.Print("Cannot restart current scene. The current scene is null.");
