@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c462y8xtfsc2g"]
+[gd_scene load_steps=9 format=4 uid="uid://c462y8xtfsc2g"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_hb6fw"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="2_77saq"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="3_w70tr"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="4_jijxv"]
 [ext_resource type="PackedScene" uid="uid://bq4vhjndlpxhp" path="res://scenes/entitities/enemy.tscn" id="5_nqmrg"]
+[ext_resource type="PackedScene" uid="uid://b3dehjqb4fhce" path="res://scenes/entitities/objects/lives_manager.tscn" id="6_f1ts4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3mdp"]
 texture = ExtResource("2_77saq")
@@ -55,3 +56,8 @@ position = Vector2(122, 1009)
 
 [node name="Player2" parent="." instance=ExtResource("4_jijxv")]
 position = Vector2(141, 431)
+
+[node name="LivesManager" parent="." instance=ExtResource("6_f1ts4")]
+
+[connection signal="lost_life" from="Player" to="LivesManager" method="_on_player_lost_life"]
+[connection signal="lost_life" from="Player2" to="LivesManager" method="_on_player_2_lost_life"]

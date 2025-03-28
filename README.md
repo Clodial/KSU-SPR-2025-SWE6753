@@ -12,13 +12,13 @@ This project is a 2D platformer game developed using the Godot Engine. The game 
 
 ## Installation
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/ksu-spr-2025-swe6753.git
-    ```
+	```sh
+	git clone https://github.com/yourusername/ksu-spr-2025-swe6753.git
+	```
 2. Open the project in Godot Engine:
-    - Launch Godot Engine.
-    - Click on `Import` and navigate to the cloned repository.
-    - Select the `project.godot` file and open it.
+	- Launch Godot Engine.
+	- Click on `Import` and navigate to the cloned repository.
+	- Select the `project.godot` file and open it.
 
 ## Controls
 - **Arrow Keys**: Move left and right
@@ -31,4 +31,3 @@ This project is a 2D platformer game developed using the Godot Engine. The game 
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
