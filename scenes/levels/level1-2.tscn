@@ -33,6 +33,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_1dopi")
 
 [node name="Level1-2" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_agq1h")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

@@ -76,3 +76,7 @@ func _go_to_level(level) -> void:
 	$menu_music.stop();
 	$level_music.play();
 	
+
+
+func ContinueGame() -> void:
+	pass # Replace with function body.
