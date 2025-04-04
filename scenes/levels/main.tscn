@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=13 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://src/utils/PauseMenu.cs" id="9_8ut3p"]
 [ext_resource type="AudioStream" uid="uid://c5df384yldclt" path="res://assets/music/ReturnOffer.wav" id="9_iarq8"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="10_f3fv4"]
+[ext_resource type="Script" path="res://src/utils/PlayerProgress.gd" id="11_dv5h7"]
 
 [sub_resource type="Theme" id="Theme_lakch"]
 Button/colors/font_color = Color(0.25098, 0.439216, 0.501961, 1)
@@ -143,6 +144,9 @@ theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 theme_override_fonts/font = ExtResource("10_f3fv4")
 theme_override_font_sizes/font_size = 64
 text = "Exit Game"
+
+[node name="PlayerProgress" type="Node" parent="."]
+script = ExtResource("11_dv5h7")
 
 [connection signal="ExitGame" from="PauseMenu" to="." method="_on_exit_game"]
 [connection signal="LevelSelect" from="PauseMenu" to="." method="_go_to_level_select"]
