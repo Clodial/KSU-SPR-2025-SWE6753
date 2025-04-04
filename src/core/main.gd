@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 
 func _on_start_game() -> void:
 	$PlayerProgress.create_new_game_file();
-	$PlayerProgress.save_game();
 	_go_to_level_select()
 	
 func _on_continue_game() -> void:
