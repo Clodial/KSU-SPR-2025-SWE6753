@@ -60,5 +60,11 @@ position = Vector2(141, 431)
 
 [node name="LivesManager" parent="." instance=ExtResource("6_f1ts4")]
 
+[node name="Player2Marker" type="Marker2D" parent="."]
+position = Vector2(142, 438)
+
+[node name="Player1Marker" type="Marker2D" parent="."]
+position = Vector2(122, 1019)
+
 [connection signal="lost_life" from="Player" to="LivesManager" method="_on_player_lost_life"]
 [connection signal="lost_life" from="Player2" to="LivesManager" method="_on_player_2_lost_life"]

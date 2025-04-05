@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://byxgckuldoh0p"]
+[gd_scene load_steps=5 format=4 uid="uid://dc7uo0ty12lgi"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_l2r6b"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="2_8m7yp"]
@@ -27,3 +27,9 @@ scale = Vector2(0.5, 0.5)
 [node name="Player2" parent="." instance=ExtResource("2_vphga")]
 position = Vector2(1135, 883)
 scale = Vector2(0.5, 0.5)
+
+[node name="Player1Marker" type="Marker2D" parent="."]
+position = Vector2(149, 896)
+
+[node name="Player2Marker" type="Marker2D" parent="."]
+position = Vector2(1136, 892)
