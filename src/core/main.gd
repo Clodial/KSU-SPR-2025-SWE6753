@@ -6,7 +6,6 @@ extends Node
 var level_to_load
 var game_data
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var start_game_level = start_level.instantiate();
