@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bnuc8ntqp8c0l"]
+[gd_scene load_steps=7 format=4 uid="uid://d2d1tw7abfoi4"]
 
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_3renb"]
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_agq1h"]
@@ -33,6 +33,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_1dopi")
 
 [node name="Level1-2" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_agq1h")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -52,3 +53,9 @@ scale = Vector2(0.5, 0.5)
 [node name="Player2" parent="." instance=ExtResource("3_ugvgu")]
 position = Vector2(747, 817)
 scale = Vector2(0.5, 0.5)
+
+[node name="Player1Marker" type="Marker2D" parent="."]
+position = Vector2(751, 821)
+
+[node name="Player2Marker" type="Marker2D" parent="."]
+position = Vector2(72, 1012)

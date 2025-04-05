@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://1ufgiyalu58n"]
+[gd_scene load_steps=11 format=4 uid="uid://jw0lal71ipa0"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_hb6fw"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="2_77saq"]
@@ -42,6 +42,7 @@ _data = {
 point_count = 2
 
 [node name="Level1-5" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_hb6fw")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
