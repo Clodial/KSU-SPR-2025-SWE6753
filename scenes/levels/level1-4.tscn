@@ -52,13 +52,12 @@ tile_map_data = PackedByteArray("AAAdAB4AAAAAAAAAAAAeAB4AAAAAAAAAAAAdAB0AAAAAAAA
 tile_set = SubResource("TileSet_6legh")
 
 [node name="Path2D" parent="." instance=ExtResource("2_itwwl")]
-position = Vector2(536, 683)
-loop = false
+position = Vector2(-125, 403)
+speed_scale = 2.0
 
 [node name="Path2D2" parent="." instance=ExtResource("2_itwwl")]
 position = Vector2(1354, 747)
 curve = SubResource("Curve2D_2vod5")
-loop = false
 
 [node name="Goal_P1" parent="." instance=ExtResource("3_x7v1h")]
 position = Vector2(752, 514)
