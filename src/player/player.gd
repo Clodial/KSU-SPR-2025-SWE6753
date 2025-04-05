@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 signal enemy_collision
+signal lost_life
 
 var screen_size
 @export var speed = 400
@@ -62,3 +63,5 @@ func handle_movement(delta) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemy_collision.emit();
+		lost_life.emit();
+		
