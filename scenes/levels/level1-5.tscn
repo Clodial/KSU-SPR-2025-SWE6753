@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="3_w70tr"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="4_jijxv"]
 [ext_resource type="PackedScene" uid="uid://bq4vhjndlpxhp" path="res://scenes/entitities/enemy.tscn" id="5_nqmrg"]
-[ext_resource type="PackedScene" uid="uid://b3dehjqb4fhce" path="res://scenes/entitities/objects/lives_manager.tscn" id="6_f1ts4"]
+[ext_resource type="PackedScene" uid="uid://b6bvxdkl4eaxt" path="res://scenes/entitities/objects/pitfall.tscn" id="6_fe41a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3mdp"]
 texture = ExtResource("2_77saq")
@@ -58,7 +58,11 @@ position = Vector2(122, 1009)
 [node name="Player2" parent="." instance=ExtResource("4_jijxv")]
 position = Vector2(141, 431)
 
-[node name="LivesManager" parent="." instance=ExtResource("6_f1ts4")]
+[node name="Pitfall" parent="." groups=["enemy"] instance=ExtResource("6_fe41a")]
+position = Vector2(226, 464)
+scale = Vector2(2.12, 1)
+collision_layer = 1
 
-[connection signal="lost_life" from="Player" to="LivesManager" method="_on_player_lost_life"]
-[connection signal="lost_life" from="Player2" to="LivesManager" method="_on_player_2_lost_life"]
+[connection signal="lost_life" from="Player" to="." method="_on_player_lost_life"]
+[connection signal="lost_life" from="Player2" to="." method="_on_player_lost_life"]
+[connection signal="body_entered" from="Pitfall" to="Player" method="_on_pitfall_body_entered"]

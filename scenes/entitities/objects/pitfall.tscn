@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bvxdkl4eaxt"]
+
+[ext_resource type="Script" path="res://scenes/entitities/objects/pitfall.gd" id="1_fpbcr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv4l7"]
+
+[node name="Pitfall" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_fpbcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dv4l7")
+
+[connection signal="body_entered" from="." to="." method="_on_Pitfall_body_entered"]
