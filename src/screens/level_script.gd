@@ -4,6 +4,7 @@ signal level_win
 signal level_lose
 var player_goal
 var level_finish
+var level_code
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,6 @@ func _ready() -> void:
 	$Player.enemy_collision.connect(self._process_level_lose.bind())
 	$Player2.enemy_collision.connect(self._process_level_lose.bind())
 	process_mode = Node.PROCESS_MODE_PAUSABLE
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
