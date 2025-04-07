@@ -53,6 +53,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Player2" parent="." instance=ExtResource("3_ugvgu")]
 position = Vector2(747, 817)
 scale = Vector2(0.5, 0.5)
+playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
 position = Vector2(751, 821)

@@ -41,6 +41,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Player2" parent="." instance=ExtResource("2_vphga")]
 position = Vector2(1135, 883)
 scale = Vector2(0.5, 0.5)
+playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
 position = Vector2(149, 896)

@@ -20,9 +20,9 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	coyote_check = false
 	if(playerOne):
-		$PlayerAnimation.animation = "p1_idle"
+		$PlayerAnimation.play("p1_idle")
 	else:
-		$PlayerAnimation.animation = "p2_idle"
+		$PlayerAnimation.play("p2_idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -39,6 +39,17 @@ func _physics_process(delta: float) -> void:
 	
 func handle_jump() -> void:
 	if !is_on_floor():
+		# animation stuff
+		if velocity.y < 0:
+			if(playerOne):
+				$PlayerAnimation.play("p1_jump")
+			else:
+				$PlayerAnimation.play("p2_jump")
+		else:
+			if(playerOne):
+				$PlayerAnimation.play("p1_fall")
+			else:
+				$PlayerAnimation.play("p2_fall")
 		if coyote_time.time_left == 0 && coyote_check == false:
 			coyote_time.start()
 			coyote_check = true
@@ -57,6 +68,19 @@ func handle_jump() -> void:
 		
 func handle_movement(delta) -> void:
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
+	if velocity.x != 0:
+		if is_on_floor():
+			if(playerOne):
+				$PlayerAnimation.play("p1_walk")
+			else:
+				$PlayerAnimation.play("p2_walk")
+		$PlayerAnimation.flip_h = velocity.x < 0
+	else:
+		if is_on_floor():
+			if(playerOne):
+				$PlayerAnimation.play("p1_idle")
+			else:
+				$PlayerAnimation.play("p2_idle")
 	if horizontal_direction:
 		velocity.x = speed * horizontal_direction
 	elif not horizontal_direction:

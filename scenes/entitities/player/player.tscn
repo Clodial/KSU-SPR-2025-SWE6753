@@ -279,7 +279,7 @@ script = ExtResource("1_je5yj")
 position = Vector2(1.25, 5.75)
 scale = Vector2(4.29688, 4.29688)
 sprite_frames = SubResource("SpriteFrames_gtujs")
-animation = &"p2_fall"
+animation = &"p1_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 3
