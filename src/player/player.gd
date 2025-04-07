@@ -19,6 +19,10 @@ var coyote_check
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	coyote_check = false
+	if(playerOne):
+		$PlayerAnimation.animation = "p1_idle"
+	else:
+		$PlayerAnimation.animation = "p2_idle"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

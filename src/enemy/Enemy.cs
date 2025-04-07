@@ -89,6 +89,7 @@ public partial class Enemy : CharacterBody2D
 	private void HandleMovement(double delta){
 
 		Velocity = new Vector2(Speed * horizontalDirection, Velocity.Y);
+		
 		// Attempt to move and check if a collision occurs
 		MoveAndSlide();
 	}
