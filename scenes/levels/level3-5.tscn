@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="3_w70tr"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="4_jijxv"]
 [ext_resource type="PackedScene" uid="uid://bq4vhjndlpxhp" path="res://scenes/entitities/enemy.tscn" id="5_nqmrg"]
-[ext_resource type="PackedScene" uid="uid://3qrxgbsp3wlj" path="res://scenes/entitities/objects/moving_platform.tscn" id="6_ux3dw"]
+[ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="6_ux3dw"]
 [ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="7_r6tbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0tm5"]
