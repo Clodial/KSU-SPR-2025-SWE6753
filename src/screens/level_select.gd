@@ -38,7 +38,7 @@ var available_levels = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$main_level_label.text = "Sprint 1 demo levels"
+	$main_level_label.text = "Humble Beginnings"
 	$sub_level_label.text = ""
 	
 

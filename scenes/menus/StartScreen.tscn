@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7u76uibw68f2"]
+[gd_scene load_steps=6 format=3 uid="uid://c7u76uibw68f2"]
 
-[ext_resource type="Texture2D" uid="uid://bg53628dmv8ur" path="res://assets/test/testlogo.png" id="1_ecvft"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="1_qpich"]
 [ext_resource type="Script" path="res://src/screens/start_screen.gd" id="1_wosr8"]
+[ext_resource type="Texture2D" uid="uid://c5fcpej67341p" path="res://assets/CRML.png" id="2_gn0x7"]
 
 [sub_resource type="Theme" id="Theme_xjjmm"]
 Button/colors/font_color = Color(0.25098, 0.439216, 0.501961, 1)
@@ -13,6 +13,8 @@ Button/colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 Button/colors/icon_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
 Button/font_sizes/font_size = 64
 Button/fonts/font = ExtResource("1_qpich")
+
+[sub_resource type="Theme" id="Theme_8wjj1"]
 
 [node name="StartScreen" type="Node"]
 script = ExtResource("1_wosr8")
@@ -25,11 +27,11 @@ offset_bottom = 1087.0
 color = Color(0.839216, 0.854902, 0.827451, 1)
 
 [node name="GameLogo" type="TextureRect" parent="HUD"]
-offset_left = 300.0
-offset_top = 200.0
-offset_right = 800.0
-offset_bottom = 700.0
-texture = ExtResource("1_ecvft")
+offset_left = 246.0
+offset_top = 181.0
+offset_right = 965.0
+offset_bottom = 640.0
+texture = ExtResource("2_gn0x7")
 
 [node name="StartGameButton" type="Button" parent="HUD"]
 anchors_preset = 6
@@ -119,6 +121,20 @@ theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
 text = "Exit Game
 "
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 246.0
+offset_top = 657.0
+offset_right = 972.0
+offset_bottom = 952.0
+theme = SubResource("Theme_8wjj1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qpich")
+theme_override_font_sizes/font_size = 40
+text = "Credits:
+Adam Salam - Programming
+Alex Smith - Programming & Character Art
+Matt Maravilla - Programming, Level Art, Audio"
 
 [connection signal="pressed" from="HUD/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="HUD/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]

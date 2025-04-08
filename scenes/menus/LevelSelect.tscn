@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cegieonx0i0by" path="res://assets/test/level_pick_icon.png" id="2_1yqvu"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
 [ext_resource type="PackedScene" uid="uid://dc7uo0ty12lgi" path="res://scenes/levels/level1-1.tscn" id="2_xqra0"]
-[ext_resource type="PackedScene" uid="uid://d2d1tw7abfoi4" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
+[ext_resource type="PackedScene" uid="uid://bnuc8ntqp8c0l" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
 [ext_resource type="Texture2D" uid="uid://d3c71mmdtn366" path="res://assets/test/level_hover_icon.png" id="3_66a6e"]
 [ext_resource type="Texture2D" uid="uid://c4idvrp35jplq" path="res://assets/test/level_disabled_icon.png" id="4_jeo6w"]
 [ext_resource type="PackedScene" uid="uid://60v8ngif5r60" path="res://scenes/levels/level1-3.tscn" id="4_rijkg"]
@@ -14,15 +14,15 @@
 [node name="LevelSelect" type="Node"]
 script = ExtResource("1_euc36")
 level1_1 = ExtResource("2_xqra0")
-level1_1_text = "Level 1"
+level1_1_text = "Jumping Off"
 level1_2 = ExtResource("3_30ys2")
-level1_2_text = "Level 2"
+level1_2_text = "Topsy Turvy"
 level1_3 = ExtResource("4_rijkg")
-level1_3_text = "Level 3"
+level1_3_text = "Sisyphian Downfall"
 level1_4 = ExtResource("5_nwck8")
-level1_4_text = "Level 4"
+level1_4_text = "Elevated Responsibilities"
 level1_5 = ExtResource("6_pbf1n")
-level1_5_text = "Level 5"
+level1_5_text = "Leap of Faith"
 
 [node name="background" type="ColorRect" parent="."]
 anchors_preset = 15

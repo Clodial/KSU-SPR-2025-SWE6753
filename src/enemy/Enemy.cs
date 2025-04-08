@@ -52,7 +52,8 @@ public partial class Enemy : CharacterBody2D
 		{
 			Velocity -= new Vector2(Velocity.X,JumpImpulse);
 		}
-
+		
+		GetNode<AnimatedSprite2D>("EnemyAnimation").FlipH = (Velocity.X > 0);
 
 		if (_rayCastRight.IsColliding() && collisionNotLocked)
 		{
