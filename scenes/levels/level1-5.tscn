@@ -57,6 +57,7 @@ position = Vector2(122, 1009)
 
 [node name="Player2" parent="." instance=ExtResource("4_jijxv")]
 position = Vector2(141, 431)
+playerOne = false
 
 [node name="LivesManager" parent="." instance=ExtResource("6_f1ts4")]
 

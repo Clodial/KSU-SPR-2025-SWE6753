@@ -71,6 +71,7 @@ position = Vector2(814, 914)
 
 [node name="Player2" parent="." instance=ExtResource("4_yndfm")]
 position = Vector2(1135, 910)
+playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
 position = Vector2(815, 921)
