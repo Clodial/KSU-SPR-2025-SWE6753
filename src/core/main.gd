@@ -16,6 +16,7 @@ func _ready() -> void:
 	start_game_level.exit_game.connect(self._on_exit_game.bind())
 	$menu_music.play();
 	$level_select_music.stop();
+	$SliderMenu/SliderHUD.hide();
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
