@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dc7uo0ty12lgi"]
+[gd_scene load_steps=6 format=4 uid="uid://dc7uo0ty12lgi"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_l2r6b"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="2_8m7yp"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="2_rgtok"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="2_vphga"]
+[ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="5_piu2h"]
 
 [node name="Level1-1" type="Node2D"]
 process_mode = 1
@@ -48,3 +49,6 @@ position = Vector2(149, 896)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
 position = Vector2(1136, 892)
+
+[node name="Pitfall" parent="." groups=["enemy"] instance=ExtResource("5_piu2h")]
+position = Vector2(258, 854)
