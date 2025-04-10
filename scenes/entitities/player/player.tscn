@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bnjs0xujgfe0i"]
+[gd_scene load_steps=45 format=3 uid="uid://bnjs0xujgfe0i"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_je5yj"]
 [ext_resource type="Texture2D" uid="uid://bctkn5l7hsjhi" path="res://assets/pixelArtEntities/Robo1/newRobosprite_idle.png" id="2_5pw3u"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://3aq3ipi4rwtm" path="res://assets/pixelArtEntities/Robo2/newRobosprite_idle.png" id="7_mgn47"]
 [ext_resource type="Texture2D" uid="uid://cr08hf5l3fbwx" path="res://assets/pixelArtEntities/Robo2/newRobo_jump.png" id="8_vqrvn"]
 [ext_resource type="Texture2D" uid="uid://fk6dl4oeh606" path="res://assets/pixelArtEntities/Robo2/newRobo_run.png" id="9_nhqmo"]
+[ext_resource type="AudioStream" uid="uid://dg8ihqgoy8tje" path="res://assets/sfx/jump.wav" id="10_eprjm"]
+[ext_resource type="AudioStream" uid="uid://cywnorttdhmj0" path="res://assets/sfx/land.wav" id="13_upf2c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3k1rr"]
 atlas = ExtResource("2_nkb4n")
@@ -295,5 +297,13 @@ one_shot = true
 [node name="ColliderBox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.25, 12.5)
 shape = SubResource("RectangleShape2D_gont3")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="jump" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("10_eprjm")
+
+[node name="land" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("13_upf2c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

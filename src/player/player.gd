@@ -14,6 +14,7 @@ var screen_size
 @export var playerOne = true
 @export var push_force: float = 200.0
 var coyote_check
+var landing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,10 +36,10 @@ func _physics_process(delta: float) -> void:
 			var collider = collision.get_collider()
 			if collider is RigidBody2D:
 				collider.apply_central_impulse(-collision.get_normal() * push_force)
-			
-	
+
 func handle_jump() -> void:
 	if !is_on_floor():
+		landing = true
 		# animation stuff
 		if velocity.y < 0:
 			if(playerOne):
@@ -54,7 +55,8 @@ func handle_jump() -> void:
 			coyote_time.start()
 			coyote_check = true
 		if !coyote_time.is_stopped() && Input.is_action_just_pressed("jump"):
-				velocity.y -= jump_impulse
+			$SFX/jump.play()
+			velocity.y -= jump_impulse
 		velocity.y += fall_acceleration
 		if  velocity.y > terminal_gravity:
 			velocity.y = terminal_gravity
@@ -63,6 +65,7 @@ func handle_jump() -> void:
 	else:
 		coyote_check = false
 		if Input.is_action_just_pressed("jump"):
+			$SFX/jump.play()
 			velocity.y -= jump_impulse
 			coyote_check = true
 		
@@ -77,6 +80,9 @@ func handle_movement(delta) -> void:
 		$PlayerAnimation.flip_h = velocity.x < 0
 	else:
 		if is_on_floor():
+			if(landing):
+				$SFX/land.play()
+				landing = false
 			if(playerOne):
 				$PlayerAnimation.play("p1_idle")
 			else:
@@ -90,7 +96,6 @@ func handle_movement(delta) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		print("yolios")
 		enemy_collision.emit();
 		lost_life.emit();
 		

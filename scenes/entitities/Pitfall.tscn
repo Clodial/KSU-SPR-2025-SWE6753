@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://g85syb8mnxe"]
+[gd_scene load_steps=4 format=3 uid="uid://bh1l7f6kgorqc"]
 
 [ext_resource type="Texture2D" uid="uid://d3c71mmdtn366" path="res://assets/test/level_hover_icon.png" id="1_ihc1f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgnse"]
-size = Vector2(143, 20)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1rv57"]
 
-[node name="Pitfall" type="Area2D"]
-collision_layer = 2
-collision_mask = 0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgnse"]
+size = Vector2(143, 17)
+
+[node name="Pitfall" type="StaticBody2D" groups=["enemy"]]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_1rv57")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["enemy"]]
 position = Vector2(61.75, -1)
@@ -15,5 +17,5 @@ scale = Vector2(0.95, 0.113333)
 texture = ExtResource("1_ihc1f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(61.5, 0)
+position = Vector2(61.5, -1.5)
 shape = SubResource("RectangleShape2D_dgnse")

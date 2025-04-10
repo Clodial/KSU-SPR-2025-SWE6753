@@ -5,6 +5,7 @@ extends Node
 @export var test_level: PackedScene
 var level_to_load
 var game_data
+var game_quit = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,17 +19,19 @@ func _ready() -> void:
 	$level_select_music.stop();
 	$SliderMenu/SliderHUD.hide();
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(game_quit):
+		get_tree().quit()
 
 func _on_start_game() -> void:
+	$SFX/select.play()
 	$PlayerProgress.create_new_game_file();
 	_go_to_level_select()
 	
 func _on_continue_game() -> void:
 	if($PlayerProgress.check_has_save()):
+		$SFX/select.play()
 		_go_to_level_select()
 	
 func _go_to_level_select() -> void:
@@ -37,7 +40,7 @@ func _go_to_level_select() -> void:
 		n.queue_free()
 	var level_select = level_select_screen.instantiate();
 	game_data = $PlayerProgress.load_game();
-	print(game_data)
+	
 	level_select.game_data_set(game_data);
 	$Levels.add_child(level_select)
 	level_select.back_to_main.connect(self._go_to_main_menu.bind())
@@ -65,7 +68,7 @@ func level_unlock(cur_level) -> void:
 	_go_to_level_select();	
 
 func _on_exit_game() -> void:
-	get_tree().quit()
+	$SFX/exit.play()
 
 func _go_to_main_menu() -> void:
 	for n in $Levels.get_children():
@@ -93,8 +96,9 @@ func _go_to_level(level, level_code) -> void:
 	$level_select_music.stop();
 	$menu_music.stop();
 	$level_music.play();
-	
-
 
 func ContinueGame() -> void:
 	_go_to_level_select()
+
+func _on_exit_finished() -> void:
+	game_quit = true
