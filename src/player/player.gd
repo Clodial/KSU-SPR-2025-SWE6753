@@ -94,3 +94,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		enemy_collision.emit();
 		lost_life.emit();
 		
+
+
+func _on_pitfall_body_entered(body: Node2D) -> void:
+		print("yolios")
+		enemy_collision.emit();
+		lost_life.emit();
