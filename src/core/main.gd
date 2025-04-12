@@ -92,7 +92,7 @@ func _go_to_level(level, level_code) -> void:
 	$Levels.add_child(newLevel);
 	$SceneManager.SetCurrentScene(newLevel)
 	newLevel.level_win.connect(self.level_unlock.bind(level_code));
-	newLevel.level_lose.connect(self._go_to_level.bind(level, level_code));
+	newLevel.level_lose.connect(self._go_to_level_select.bind());
 	$level_select_music.stop();
 	$menu_music.stop();
 	$level_music.play();
