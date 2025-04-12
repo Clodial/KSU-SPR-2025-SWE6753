@@ -7,6 +7,8 @@ var level_finish
 var lives
 var level_code
 
+var level_game_over = false;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lives = 3;
@@ -24,20 +26,26 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if ( player_goal == 2 && level_finish == false):
+	if(player_goal == 2 && level_finish == false):
 		level_finish = true;
 		level_win.emit()
 
 func _goal_touch() -> void:
+	$SFX/goal_hit.play()
 	player_goal += 1;
 
 func _goal_leave() -> void:
+	$SFX/goal_leave.play()
 	player_goal -= 1;
 	
 func _process_level_lose(player1, player2, player1Marker, player2Marker) -> void:
 	if(lives > 1):
+		$SFX/lose_a_life.play()
 		lives = lives - 1;
 		player1.position = player1Marker.position
 		player2.position = player2Marker.position
 	else:
-		level_lose.emit()
+		$SFX/whacked.play()
+
+func _on_whacked_finished() -> void:
+	level_lose.emit()

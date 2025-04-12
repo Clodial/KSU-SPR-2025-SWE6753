@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://dc7uo0ty12lgi"]
+[gd_scene load_steps=10 format=4 uid="uid://dc7uo0ty12lgi"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_l2r6b"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="2_8m7yp"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="2_rgtok"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="2_vphga"]
-[ext_resource type="PackedScene" uid="uid://bh1l7f6kgorqc" path="res://scenes/entitities/Pitfall.tscn" id="5_piu2h"]
+[ext_resource type="AudioStream" uid="uid://sa00j8rywwpl" path="res://assets/sfx/goal_hit.wav" id="5_ce6do"]
+[ext_resource type="AudioStream" uid="uid://c4u0rsu7b5et1" path="res://assets/sfx/goal_leave.wav" id="6_l3vlk"]
+[ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="7_1lms0"]
+[ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_vkyu5"]
+[ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_racgm"]
 
 [node name="Level1-1" type="Node2D"]
 process_mode = 1
@@ -50,5 +54,21 @@ position = Vector2(149, 896)
 [node name="Player2Marker" type="Marker2D" parent="."]
 position = Vector2(1136, 892)
 
-[node name="Pitfall" parent="." groups=["enemy"] instance=ExtResource("5_piu2h")]
-position = Vector2(258, 854)
+[node name="SFX" type="Node" parent="."]
+
+[node name="goal_hit" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_ce6do")
+
+[node name="goal_leave" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_l3vlk")
+
+[node name="level_win" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("7_1lms0")
+
+[node name="lose_a_life" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("8_vkyu5")
+
+[node name="whacked" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("9_racgm")
+
+[connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]

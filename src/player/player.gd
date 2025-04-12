@@ -92,8 +92,6 @@ func handle_movement(delta) -> void:
 	elif not horizontal_direction:
 		velocity.x = move_toward(velocity.x, 0, speed * 0.5) #gradual deceleration when not sliding
 	
-
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemy_collision.emit();
