@@ -53,16 +53,34 @@ func _go_to_level_select() -> void:
 	
 func level_unlock(cur_level) -> void:
 	var available_levels = game_data.get("available_levels");
-	if(cur_level == "level1_1" and !available_levels.has("level1_2")):
-		available_levels.append("level1_2");
-	elif(cur_level == "level1_2" and !available_levels.has("level1_3")):
-		available_levels.append("level1_3");
-	elif(cur_level == "level1_3" and !available_levels.has("level1_4")):
-		available_levels.append("level1_4");
-	elif(cur_level == "level1_4" and !available_levels.has("level1_5")):
-		available_levels.append("level1_5");
+	var next_level: String
+	var finished: bool = false
+	
+	if(cur_level == "level1_1"):
+		next_level = "level1_2";
+		if(!available_levels.has(next_level)):
+			available_levels.append(next_level);
+	elif(cur_level == "level1_2" ):
+		next_level = "level1_3";
+		if(!available_levels.has(next_level)):
+			available_levels.append(next_level);
+	elif(cur_level == "level1_3" ):
+		next_level = "level1_4";
+		if(!available_levels.has(next_level)):
+			available_levels.append(next_level);
+	elif(cur_level == "level1_4"):
+		next_level = "level1_5";
+		if(!available_levels.has(next_level)):
+			available_levels.append(next_level);
+	else:
+		finished = true
+
 	$PlayerProgress.set_progress_add_level(available_levels);
-	_go_to_level_select();	
+	
+	if(finished):
+		_go_to_level_select();
+	else:
+		_go_to_level($SceneManager.GetScene(next_level), next_level)
 
 func _on_exit_game() -> void:
 	get_tree().quit()
