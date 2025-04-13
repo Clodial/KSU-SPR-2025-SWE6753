@@ -46,7 +46,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Level1-5" type="Node2D"]
+[node name="Level3-5" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_hb6fw")
 
@@ -104,3 +104,5 @@ stream = ExtResource("11_kapmf")
 
 [node name="whacked" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("12_qfe2t")
+
+[node name="RestartTimer" type="Timer" parent="."]

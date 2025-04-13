@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 signal enemy_collision
-signal lost_life
 
 var screen_size
 @export var speed = 400
@@ -16,6 +15,10 @@ var screen_size
 var coyote_check
 var landing = false
 
+var life_loss = false
+
+var start_pos = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -27,15 +30,26 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	handle_jump()
-	handle_movement(delta)
-	var collision_count = move_and_slide()
-	if collision_count:
-		for i in get_slide_collision_count():
-			var collision = self.get_slide_collision(i)
-			var collider = collision.get_collider()
-			if collider is RigidBody2D:
-				collider.apply_central_impulse(-collision.get_normal() * push_force)
+	if(!life_loss):
+		handle_jump()
+		handle_movement(delta)
+		var collision_count = move_and_slide()
+		if collision_count:
+			for i in get_slide_collision_count():
+				var collision = self.get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider is RigidBody2D:
+					collider.apply_central_impulse(-collision.get_normal() * push_force)	
+		if(self.position.y > 1100):
+			enemy_collision.emit();
+			
+
+func _set_life_loss(didILose):
+	print(playerOne)
+	life_loss = didILose
+
+func get_life_loss():
+	return life_loss
 
 func handle_jump() -> void:
 	if !is_on_floor():
@@ -91,9 +105,20 @@ func handle_movement(delta) -> void:
 		velocity.x = speed * horizontal_direction
 	elif not horizontal_direction:
 		velocity.x = move_toward(velocity.x, 0, speed * 0.5) #gradual deceleration when not sliding
-	
+
+func set_restart_position(position):
+	start_pos = position;
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if !life_loss && body.is_in_group("enemy"):
 		enemy_collision.emit();
-		lost_life.emit();
 		
+
+func _on_player_animation_animation_looped() -> void:
+	if($PlayerAnimation.animation == "explosion"):
+		if(playerOne):
+			$PlayerAnimation.play("p1_idle")
+		else:
+			$PlayerAnimation.play("p2_idle")
+		$PlayerAnimation.set_speed_scale(1)
+		self.position = start_pos
