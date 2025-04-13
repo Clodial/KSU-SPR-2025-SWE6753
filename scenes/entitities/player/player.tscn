@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"explosion",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,8 +378,8 @@ script = ExtResource("1_je5yj")
 position = Vector2(1.25, 5.75)
 scale = Vector2(4.29688, 4.29688)
 sprite_frames = SubResource("SpriteFrames_gtujs")
-animation = &"explosion"
-frame_progress = 0.811862
+animation = &"p2_fall"
+frame_progress = 0.828103
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 3

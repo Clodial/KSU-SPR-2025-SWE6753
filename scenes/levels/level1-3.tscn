@@ -21,7 +21,7 @@ offset_left = 10.0
 offset_top = 11.0
 offset_right = 1951.0
 offset_bottom = 1088.0
-color = Color(0.537255, 1, 1, 1)
+color = Color(0, 0.670588, 0.768627, 1)
 
 [node name="pl1_box" type="ColorRect" parent="."]
 offset_left = 3.0

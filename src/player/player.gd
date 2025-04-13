@@ -45,7 +45,6 @@ func _physics_process(delta: float) -> void:
 			
 
 func _set_life_loss(didILose):
-	print(playerOne)
 	life_loss = didILose
 
 func get_life_loss():

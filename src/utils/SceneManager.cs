@@ -46,7 +46,6 @@ public partial class SceneManager : Node
 			GD.Print("Cannot set current scene. The scene argument is null.");
 			return;
 		}
-		GD.Print("Current scene set: " + scene.Name);
 		CurrentScene = scene;
 	}
 
