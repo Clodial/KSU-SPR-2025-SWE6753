@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjofmlf2om3ck"]
 
 [ext_resource type="Script" path="res://src/screens/level_select.gd" id="1_euc36"]
-[ext_resource type="Texture2D" uid="uid://cegieonx0i0by" path="res://assets/test/level_pick_icon.png" id="2_1yqvu"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
 [ext_resource type="PackedScene" uid="uid://dc7uo0ty12lgi" path="res://scenes/levels/level1-1.tscn" id="2_xqra0"]
-[ext_resource type="PackedScene" uid="uid://bnuc8ntqp8c0l" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
-[ext_resource type="Texture2D" uid="uid://d3c71mmdtn366" path="res://assets/test/level_hover_icon.png" id="3_66a6e"]
-[ext_resource type="Texture2D" uid="uid://c4idvrp35jplq" path="res://assets/test/level_disabled_icon.png" id="4_jeo6w"]
+[ext_resource type="PackedScene" uid="uid://d2d1tw7abfoi4" path="res://scenes/levels/level1-2.tscn" id="3_30ys2"]
 [ext_resource type="PackedScene" uid="uid://60v8ngif5r60" path="res://scenes/levels/level1-3.tscn" id="4_rijkg"]
 [ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level1-4.tscn" id="5_nwck8"]
 [ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level1-5.tscn" id="6_pbf1n"]
+[ext_resource type="Texture2D" uid="uid://ilqb15jng5li" path="res://assets/test/unlocked_level.png" id="7_2ljp2"]
+[ext_resource type="Texture2D" uid="uid://dubp5rjifgk6s" path="res://assets/test/locked_level.png" id="8_fukap"]
+[ext_resource type="Texture2D" uid="uid://b6imkxhmirt14" path="res://assets/test/arrow.png" id="11_mt34y"]
 
 [node name="LevelSelect" type="Node"]
 script = ExtResource("1_euc36")
@@ -83,10 +83,11 @@ offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
 offset_bottom = 176.0
-texture_normal = ExtResource("2_1yqvu")
-texture_pressed = ExtResource("2_1yqvu")
-texture_hover = ExtResource("3_66a6e")
-texture_disabled = ExtResource("4_jeo6w")
+texture_normal = ExtResource("7_2ljp2")
+texture_pressed = ExtResource("7_2ljp2")
+texture_hover = ExtResource("7_2ljp2")
+texture_disabled = ExtResource("8_fukap")
+stretch_mode = 0
 
 [node name="level2" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
@@ -108,10 +109,11 @@ offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
 offset_bottom = 176.0
-texture_normal = ExtResource("2_1yqvu")
-texture_pressed = ExtResource("2_1yqvu")
-texture_hover = ExtResource("3_66a6e")
-texture_disabled = ExtResource("4_jeo6w")
+texture_normal = ExtResource("7_2ljp2")
+texture_pressed = ExtResource("7_2ljp2")
+texture_hover = ExtResource("7_2ljp2")
+texture_disabled = ExtResource("8_fukap")
+stretch_mode = 0
 
 [node name="level3" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
@@ -133,10 +135,11 @@ offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
 offset_bottom = 176.0
-texture_normal = ExtResource("2_1yqvu")
-texture_pressed = ExtResource("2_1yqvu")
-texture_hover = ExtResource("3_66a6e")
-texture_disabled = ExtResource("4_jeo6w")
+texture_normal = ExtResource("7_2ljp2")
+texture_pressed = ExtResource("7_2ljp2")
+texture_hover = ExtResource("7_2ljp2")
+texture_disabled = ExtResource("8_fukap")
+stretch_mode = 0
 
 [node name="level4" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
@@ -159,10 +162,11 @@ offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
 offset_bottom = 176.0
-texture_normal = ExtResource("2_1yqvu")
-texture_pressed = ExtResource("2_1yqvu")
-texture_hover = ExtResource("3_66a6e")
-texture_disabled = ExtResource("4_jeo6w")
+texture_normal = ExtResource("7_2ljp2")
+texture_pressed = ExtResource("7_2ljp2")
+texture_hover = ExtResource("7_2ljp2")
+texture_disabled = ExtResource("8_fukap")
+stretch_mode = 0
 
 [node name="level5" type="ColorRect" parent="level_picker"]
 anchors_preset = 8
@@ -185,10 +189,11 @@ offset_left = 25.0
 offset_top = 26.0
 offset_right = 175.0
 offset_bottom = 176.0
-texture_normal = ExtResource("2_1yqvu")
-texture_pressed = ExtResource("2_1yqvu")
-texture_hover = ExtResource("3_66a6e")
-texture_disabled = ExtResource("4_jeo6w")
+texture_normal = ExtResource("7_2ljp2")
+texture_pressed = ExtResource("7_2ljp2")
+texture_hover = ExtResource("7_2ljp2")
+texture_disabled = ExtResource("8_fukap")
+stretch_mode = 0
 
 [node name="main_menu_button" type="Button" parent="."]
 offset_left = 1378.0
@@ -241,6 +246,23 @@ text = "Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LeftButton" type="TextureButton" parent="."]
+offset_left = 104.0
+offset_top = 377.0
+offset_right = 240.0
+offset_bottom = 513.0
+texture_normal = ExtResource("11_mt34y")
+stretch_mode = 0
+
+[node name="RightButton" type="TextureButton" parent="."]
+offset_left = 1680.0
+offset_top = 377.0
+offset_right = 1816.0
+offset_bottom = 513.0
+texture_normal = ExtResource("11_mt34y")
+stretch_mode = 0
+flip_h = true
+
 [connection signal="button_down" from="level_picker/level1/levelButton" to="." method="_on_level_button_button_down"]
 [connection signal="mouse_entered" from="level_picker/level1/levelButton" to="." method="_on_level_button_mouse_entered"]
 [connection signal="mouse_exited" from="level_picker/level1/levelButton" to="." method="_on_level_button_mouse_exited"]
@@ -257,3 +279,5 @@ vertical_alignment = 1
 [connection signal="mouse_exited" from="level_picker/level5/levelButton5" to="." method="_on_level_button_5_mouse_exited"]
 [connection signal="pressed" from="level_picker/level5/levelButton5" to="." method="_on_level_button_5_pressed"]
 [connection signal="button_down" from="main_menu_button" to="." method="_on_main_menu_button_button_down"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

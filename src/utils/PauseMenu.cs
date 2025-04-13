@@ -37,9 +37,11 @@ public partial class PauseMenu : Node
 			GetTree().Paused = !GetTree().Paused;
 			
 			if(GetTree().Paused){
+				GetParent().Call("pause_level_music");
 				hud.Show();
 			}
 			else{
+				GetParent().Call("play_level_music");
 				hud.Hide();
 			}
 		}
