@@ -8,9 +8,14 @@ var lives
 var level_code
 
 var level_game_over = false;
+var restarting_item
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var block_check = get_node_or_null("giantBlock")
+	if(block_check):
+		restarting_item = block_check.position
+		print(restarting_item)
 	$RestartTimer.stop()
 	lives = 3;
 	player_goal = 0
@@ -41,6 +46,11 @@ func _goal_leave() -> void:
 	
 func _process_level_lose(player1, player2, player1Marker, player2Marker) -> void:
 	if(lives > 1):
+		var bigBlock = get_node_or_null("giantBlock")
+		var blockMarker = get_node_or_null("giantBlockMarker")
+		if(bigBlock && blockMarker):
+			bigBlock.global_transform.origin = blockMarker.position 
+			bigBlock.rotation = 0.0
 		player1._set_life_loss(true)
 		player2._set_life_loss(true)
 		player1.get_node("PlayerAnimation").play("explosion")
