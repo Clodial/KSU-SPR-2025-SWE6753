@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=28 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://7883ofvdfkkr" path="res://assets/sfx/exit.wav" id="12_hnkk2"]
 [ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level2-1.tscn" id="12_vuf7b"]
 [ext_resource type="PackedScene" uid="uid://br0pvmlphmmed" path="res://scenes/levels/level2-2.tscn" id="13_dy7lm"]
+[ext_resource type="PackedScene" uid="uid://buvf4qxqeadcu" path="res://scenes/levels/level2-3.tscn" id="14_1krmm"]
 [ext_resource type="PackedScene" uid="uid://5msp7nctos76" path="res://scenes/levels/level2-5.tscn" id="14_tooy1"]
 [ext_resource type="AudioStream" uid="uid://brbl0obpy5a6r" path="res://assets/sfx/select.wav" id="21_pmpnp"]
 
@@ -46,7 +47,7 @@ test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("5_angnu")
-levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("14_tooy1"), ExtResource("10_kkfhb"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc")])
+levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("14_1krmm"), ExtResource("6_j54fc"), ExtResource("14_tooy1"), ExtResource("10_kkfhb"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc")])
 
 [node name="Levels" type="Node" parent="."]
 

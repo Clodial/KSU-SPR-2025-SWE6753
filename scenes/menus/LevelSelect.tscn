@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjofmlf2om3ck"]
+[gd_scene load_steps=16 format=3 uid="uid://bjofmlf2om3ck"]
 
 [ext_resource type="Script" path="res://src/screens/level_select.gd" id="1_euc36"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level2-1.tscn" id="7_7l6mq"]
 [ext_resource type="Texture2D" uid="uid://dubp5rjifgk6s" path="res://assets/test/locked_level.png" id="8_fukap"]
 [ext_resource type="PackedScene" uid="uid://br0pvmlphmmed" path="res://scenes/levels/level2-2.tscn" id="8_hw7sk"]
+[ext_resource type="PackedScene" uid="uid://buvf4qxqeadcu" path="res://scenes/levels/level2-3.tscn" id="9_7s8l5"]
 [ext_resource type="PackedScene" uid="uid://5msp7nctos76" path="res://scenes/levels/level2-5.tscn" id="9_qukkr"]
 [ext_resource type="Texture2D" uid="uid://b6imkxhmirt14" path="res://assets/test/arrow.png" id="11_mt34y"]
 
@@ -31,7 +32,7 @@ level2_1 = ExtResource("7_7l6mq")
 level2_1_text = "Elevated Responsibilities"
 level2_2 = ExtResource("8_hw7sk")
 level2_2_text = "Paired Programming"
-level2_3 = ExtResource("2_xqra0")
+level2_3 = ExtResource("9_7s8l5")
 level2_3_text = "Morning Standup"
 level2_4 = ExtResource("2_xqra0")
 level2_4_text = "Year-End Review"
