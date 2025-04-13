@@ -59,34 +59,53 @@ func _go_to_level_select() -> void:
 	$level_select_music.play();
 	song_position = active_song.get_playback_position();
 	active_song.stop();
+
+func level_appender(next_level):
+	var available_levels = game_data.get("available_levels")
+	if(!available_levels.has(next_level)):
+		available_levels.append(next_level)
+		$PlayerProgress.set_progress_add_level(available_levels)
+		return next_level
+	else:
+		return null
 	
+
 func level_unlock(cur_level) -> void:
-	var available_levels = game_data.get("available_levels");
-	var next_level: String
 	var finished: bool = false
+	var next_level = null
 	
 	if(cur_level == "level1_1"):
-		next_level = "level1_2";
-		if(!available_levels.has(next_level)):
-			available_levels.append(next_level);
+		next_level = level_appender("level1_2")
 	elif(cur_level == "level1_2" ):
-		next_level = "level1_3";
-		if(!available_levels.has(next_level)):
-			available_levels.append(next_level);
+		next_level = level_appender("level1_3");
 	elif(cur_level == "level1_3" ):
-		next_level = "level1_4";
-		if(!available_levels.has(next_level)):
-			available_levels.append(next_level);
+		next_level = level_appender("level1_4")
 	elif(cur_level == "level1_4"):
-		next_level = "level1_5";
-		if(!available_levels.has(next_level)):
-			available_levels.append(next_level);
+		next_level = level_appender("level1_5")
+	elif(cur_level == "level1_5"):
+		next_level = level_appender("level2_1")
+	elif(cur_level == "level2_1"):
+		next_level = level_appender("level2_2")
+	elif(cur_level == "level2_2"):
+		next_level = level_appender("level2_3")
+	elif(cur_level == "level2_3"):
+		next_level = level_appender("level2_4")
+	elif(cur_level == "level2_4"):
+		next_level = level_appender("level2_5")
+	elif(cur_level == "level2_5"):
+		next_level = level_appender("level3_1")
+	elif(cur_level == "level3_1"):
+		next_level = level_appender("level3_2")
+	elif(cur_level == "level3_2"):
+		next_level = level_appender("level3_3")
+	elif(cur_level == "level3_3"):
+		next_level = level_appender("level3_4")
+	elif(cur_level == "level3_4"):
+		next_level = level_appender("level3_5")
 	else:
 		finished = true
-
-	$PlayerProgress.set_progress_add_level(available_levels);
 	
-	if(finished):
+	if(finished || next_level == null):
 		_go_to_level_select();
 	else:
 		_go_to_level($SceneManager.GetScene(next_level), next_level)
