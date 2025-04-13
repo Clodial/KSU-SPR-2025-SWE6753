@@ -54,6 +54,16 @@ func _go_to_level_select() -> void:
 	level_select.select_level1_3.connect(self._go_to_level.bind(level_select.level1_3, "level1_3"));
 	level_select.select_level1_4.connect(self._go_to_level.bind(level_select.level1_4, "level1_4"));
 	level_select.select_level1_5.connect(self._go_to_level.bind(level_select.level1_5, "level1_5"));
+	level_select.select_level2_1.connect(self._go_to_level.bind(level_select.level2_1, "level2_1"));
+	level_select.select_level2_2.connect(self._go_to_level.bind(level_select.level2_2, "level2_2"));
+	level_select.select_level2_3.connect(self._go_to_level.bind(level_select.level2_3, "level2_3"));
+	level_select.select_level2_4.connect(self._go_to_level.bind(level_select.level2_4, "level2_4"));
+	level_select.select_level2_5.connect(self._go_to_level.bind(level_select.level2_5, "level2_5"));
+	level_select.select_level3_1.connect(self._go_to_level.bind(level_select.level3_1, "level3_1"));
+	level_select.select_level3_2.connect(self._go_to_level.bind(level_select.level3_2, "level3_2"));
+	level_select.select_level3_3.connect(self._go_to_level.bind(level_select.level3_3, "level3_3"));
+	level_select.select_level3_4.connect(self._go_to_level.bind(level_select.level3_4, "level3_4"));
+	level_select.select_level3_5.connect(self._go_to_level.bind(level_select.level3_5, "level3_5"));
 	$SceneManager.SetCurrentScene(level_select)
 	$menu_music.stop();
 	$level_select_music.play();

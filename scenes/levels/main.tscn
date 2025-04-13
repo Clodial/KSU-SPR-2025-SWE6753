@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=21 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -9,14 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://d2d1tw7abfoi4" path="res://scenes/levels/level1-2.tscn" id="7_djj7f"]
 [ext_resource type="AudioStream" uid="uid://6mqvh2mvuvyp" path="res://assets/music/caffeineTimer.wav" id="7_eod30"]
 [ext_resource type="AudioStream" uid="uid://bcxy4o2gxx8pi" path="res://assets/music/coffeeShop.wav" id="7_i7sl5"]
-[ext_resource type="PackedScene" uid="uid://60v8ngif5r60" path="res://scenes/levels/level1-3.tscn" id="8_cgmvi"]
-[ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level1-4.tscn" id="9_3j1c6"]
+[ext_resource type="PackedScene" uid="uid://60v8ngif5r60" path="res://scenes/levels/level1-5.tscn" id="8_cgmvi"]
 [ext_resource type="Script" path="res://src/utils/PauseMenu.cs" id="9_8ut3p"]
+[ext_resource type="PackedScene" uid="uid://cias3gshk3yce" path="res://scenes/levels/level1-3.tscn" id="9_f6le7"]
 [ext_resource type="AudioStream" uid="uid://bruxn0b71ukuy" path="res://assets/music/WaterCoolerParthenon.wav" id="9_fcvkh"]
 [ext_resource type="AudioStream" uid="uid://c5df384yldclt" path="res://assets/music/ReturnOffer.wav" id="9_iarq8"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="10_f3fv4"]
 [ext_resource type="AudioStream" uid="uid://b0s3h15ryfdon" path="res://assets/music/AngelicPromotion.wav" id="10_jptom"]
-[ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level1-5.tscn" id="10_kkfhb"]
 [ext_resource type="Script" path="res://src/utils/PlayerProgress.gd" id="11_dv5h7"]
 [ext_resource type="AudioStream" uid="uid://7883ofvdfkkr" path="res://assets/sfx/exit.wav" id="12_hnkk2"]
 [ext_resource type="AudioStream" uid="uid://brbl0obpy5a6r" path="res://assets/sfx/select.wav" id="21_pmpnp"]
@@ -40,7 +39,7 @@ test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("5_angnu")
-levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("8_cgmvi"), ExtResource("9_3j1c6"), ExtResource("10_kkfhb")])
+levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_f6le7"), ExtResource("9_f6le7"), ExtResource("8_cgmvi"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc")])
 
 [node name="Levels" type="Node" parent="."]
 
