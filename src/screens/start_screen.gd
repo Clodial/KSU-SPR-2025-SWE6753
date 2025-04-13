@@ -3,6 +3,7 @@ extends Node
 signal start_game
 signal exit_game
 signal continue_game
+signal settings_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +25,7 @@ func _on_exit_game_button_pressed() -> void:
 
 func _on_continue_game_button_pressed() -> void:
 	continue_game.emit()
+
+
+func _on_settings_button_pressed() -> void:
+	settings_menu.emit()

@@ -2,7 +2,9 @@ extends Node
 
 @export var start_level: PackedScene
 @export var level_select_screen: PackedScene
+@export var settings_menu_screen: PackedScene
 @export var test_level: PackedScene
+var config := ConfigFile.new()
 var level_to_load
 var game_data
 var game_quit = false
@@ -17,11 +19,22 @@ func _ready() -> void:
 	$SceneManager.SetCurrentScene(start_game_level);
 	start_game_level.start_game.connect(self._on_start_game.bind())
 	start_game_level.continue_game.connect(self._on_continue_game.bind())
+	start_game_level.settings_menu.connect(self._on_settings_menu.bind())
 	start_game_level.exit_game.connect(self._on_exit_game.bind())
 	$menu_music.play();
 	$level_select_music.stop();
 	$SliderMenu/SliderHUD.hide();
 	active_song = $level_music
+	
+	var err = config.load("user://settings.cfg")
+	# If the file didn't load, use current volume and return
+	if err != OK:
+		var bus_index = AudioServer.get_bus_index("Master") # Replace with your bus name
+		var volume_db = AudioServer.get_bus_volume_db(bus_index)
+		var linear = db_to_linear(volume_db)
+	else:
+		var saved_volume = float(config.get_value("settings", "volume"))
+		set_volume(saved_volume)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,6 +50,11 @@ func _on_continue_game() -> void:
 	if($PlayerProgress.check_has_save()):
 		$SFX/select.play()
 		_go_to_level_select()
+		
+func _on_settings_menu() -> void:
+	print("on_settings_menu")
+	$SFX/select.play()
+	_go_to_settings_menu()
 	
 func _go_to_level_select() -> void:
 	for n in $Levels.get_children():
@@ -69,6 +87,22 @@ func _go_to_level_select() -> void:
 	$level_select_music.play();
 	song_position = active_song.get_playback_position();
 	active_song.stop();
+
+func _go_to_settings_menu() -> void:
+	print("go_to_settings_menu")
+	for n in $Levels.get_children():
+		$Levels.remove_child(n)
+		n.queue_free()
+	var settings_menu = settings_menu_screen.instantiate();
+	
+	$Levels.add_child(settings_menu)
+	settings_menu.connect("BackToMain", Callable(self, "_go_to_main_menu"))
+	$SceneManager.SetCurrentScene(settings_menu)
+	$menu_music.stop();
+	$level_select_music.play();
+	song_position = active_song.get_playback_position();
+	active_song.stop();
+
 
 func level_appender(next_level):
 	var available_levels = game_data.get("available_levels")
@@ -136,6 +170,7 @@ func _go_to_main_menu() -> void:
 	$SceneManager.SetCurrentScene(start_game_level)
 	start_game_level.start_game.connect(self._on_start_game.bind())
 	start_game_level.continue_game.connect(self._on_continue_game.bind())
+	start_game_level.settings_menu.connect(self._on_settings_menu.bind())
 	start_game_level.exit_game.connect(self._on_exit_game.bind())
 	$menu_music.play();
 	song_position = active_song.get_playback_position();
@@ -183,3 +218,10 @@ func ContinueGame() -> void:
 
 func _on_exit_finished() -> void:
 	game_quit = true
+	
+func set_volume(value: float) -> void:
+	var db = linear_to_db(value)
+	AudioServer.set_bus_volume_db(0, db)
+
+	config.set_value("settings", "volume", value)
+	config.save("user://settings.cfg")

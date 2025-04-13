@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
 [ext_resource type="PackedScene" uid="uid://bjofmlf2om3ck" path="res://scenes/menus/LevelSelect.tscn" id="3_x3aa7"]
 [ext_resource type="PackedScene" uid="uid://dtyt25j8a3pmo" path="res://scenes/debug/test_level.tscn" id="4_20ne4"]
+[ext_resource type="PackedScene" uid="uid://57urh6qac8al" path="res://scenes/menus/SettingsMenu.tscn" id="4_u5hav"]
 [ext_resource type="Script" path="res://src/utils/SceneManager.cs" id="5_angnu"]
 [ext_resource type="PackedScene" uid="uid://dc7uo0ty12lgi" path="res://scenes/levels/level1-1.tscn" id="6_j54fc"]
 [ext_resource type="PackedScene" uid="uid://d2d1tw7abfoi4" path="res://scenes/levels/level1-2.tscn" id="7_djj7f"]
@@ -37,6 +38,7 @@ process_mode = 3
 script = ExtResource("1_8x5c7")
 start_level = ExtResource("2_hltfq")
 level_select_screen = ExtResource("3_x3aa7")
+settings_menu_screen = ExtResource("4_u5hav")
 test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
@@ -209,7 +211,9 @@ stream = ExtResource("21_pmpnp")
 
 [connection signal="ExitGame" from="PauseMenu" to="." method="_on_exit_game"]
 [connection signal="LevelSelect" from="PauseMenu" to="." method="_go_to_level_select"]
+[connection signal="Settings" from="PauseMenu" to="." method="_go_to_settings_menu"]
 [connection signal="pressed" from="PauseMenu/HUD/ContinueGameButton" to="PauseMenu" method="OnContinueGame"]
+[connection signal="pressed" from="PauseMenu/HUD/SettingsButton" to="PauseMenu" method="OnSettings"]
 [connection signal="pressed" from="PauseMenu/HUD/LevelsButton" to="PauseMenu" method="OnLevelSelect"]
 [connection signal="pressed" from="PauseMenu/HUD/ExitGameButton" to="PauseMenu" method="OnExitGame"]
 [connection signal="finished" from="SFX/exit" to="." method="_on_exit_finished"]

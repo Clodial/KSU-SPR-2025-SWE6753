@@ -64,6 +64,7 @@ public partial class PauseMenu : Node
 
 	public void OnSettings(){
 		hud.Hide();
+		GetTree().Paused = false;
 		EmitSignal("Settings");
 	}
 }
