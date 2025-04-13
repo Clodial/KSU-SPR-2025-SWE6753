@@ -7,6 +7,9 @@ var level_to_load
 var game_data
 var game_quit = false
 
+var song_position = 0.0
+var active_song
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var start_game_level = start_level.instantiate();
@@ -18,6 +21,7 @@ func _ready() -> void:
 	$menu_music.play();
 	$level_select_music.stop();
 	$SliderMenu/SliderHUD.hide();
+	active_song = $level_music
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,7 +56,8 @@ func _go_to_level_select() -> void:
 	$SceneManager.SetCurrentScene(level_select)
 	$menu_music.stop();
 	$level_select_music.play();
-	$level_music.stop();
+	song_position = active_song.get_playback_position();
+	active_song.stop();
 	
 func level_unlock(cur_level) -> void:
 	var available_levels = game_data.get("available_levels");
@@ -99,8 +104,9 @@ func _go_to_main_menu() -> void:
 	start_game_level.continue_game.connect(self._on_continue_game.bind())
 	start_game_level.exit_game.connect(self._on_exit_game.bind())
 	$menu_music.play();
+	song_position = active_song.get_playback_position();
 	$level_select_music.stop();
-	$level_music.stop();
+	active_song.stop();
 
 func _go_to_level(level, level_code) -> void:
 	for n in $Levels.get_children():
@@ -113,7 +119,15 @@ func _go_to_level(level, level_code) -> void:
 	newLevel.level_lose.connect(self._go_to_level_select.bind());
 	$level_select_music.stop();
 	$menu_music.stop();
-	$level_music.play();
+	if(!$level_music.playing):
+		$level_music.play(song_position);
+
+func pause_level_music() -> void:
+	song_position = active_song.get_playback_position()
+	active_song.stop()
+
+func play_level_music() -> void:
+	active_song.play(song_position)
 
 func ContinueGame() -> void:
 	_go_to_level_select()
