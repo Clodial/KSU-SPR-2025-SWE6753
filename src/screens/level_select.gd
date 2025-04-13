@@ -1,9 +1,16 @@
 extends Node
 
-var level_data
+var level_data = {
+	"available_levels": [
+		"level1-1"
+	]
+}
 
 signal back_to_main
 signal select_level1_1
+
+var level_section = 1
+
 @export var level1_1: PackedScene
 var level1_1_code = "level1_1"
 @export var level1_1_text: String
@@ -28,6 +35,19 @@ signal select_level1_5
 var level1_5_code = "level1_5"
 @export var level1_5_text: String
 @export var level1_5_active: bool
+
+var level2_1_code = "level2_1"
+var level2_2_code = "level2_2"
+var level2_3_code = "level2_3"
+var level2_4_code = "level2_4"
+var level2_5_code = "level2_5"
+
+var level3_1_code = "level3_1"
+var level3_2_code = "level3_2"
+var level3_3_code = "level3_3"
+var level3_4_code = "level3_4"
+var level3_5_code = "level3_5"
+
 var available_levels = [
 	level1_1_code,
 	level1_2_code,
@@ -45,9 +65,49 @@ func _ready() -> void:
 func game_data_set(data) -> void:
 	level_data = data
 
+func set_button_data(data, section) -> void:
+	if section == 1:
+		if(!data.get("available_levels").has(level1_1_code)):
+			get_node("level_picker/level1/levelButton").disabled = true
+		if(!data.get("available_levels").has(level1_2_code)):
+			get_node("level_picker/level2/levelButton2").disabled = true
+		if(!data.get("available_levels").has(level1_3_code)):
+			get_node("level_picker/level3/levelButton3").disabled = true
+		if(!data.get("available_levels").has(level1_4_code)):
+			get_node("level_picker/level4/levelButton4").disabled = true
+		if(!data.get("available_levels").has(level1_5_code)):
+			get_node("level_picker/level5/levelButton5").disabled = true
+	elif section == 2:
+		if(!data.get("available_levels").has(level2_1_code)):
+			get_node("level_picker/level1/levelButton").disabled = true
+		if(!data.get("available_levels").has(level2_2_code)):
+			get_node("level_picker/level2/levelButton2").disabled = true
+		if(!data.get("available_levels").has(level2_3_code)):
+			get_node("level_picker/level3/levelButton3").disabled = true
+		if(!data.get("available_levels").has(level2_4_code)):
+			get_node("level_picker/level4/levelButton4").disabled = true
+		if(!data.get("available_levels").has(level2_5_code)):
+			get_node("level_picker/level5/levelButton5").disabled = true
+	elif section == 3:
+		if(!data.get("available_levels").has(level3_1_code)):
+			get_node("level_picker/level1/levelButton").disabled = true
+		if(!data.get("available_levels").has(level3_2_code)):
+			get_node("level_picker/level2/levelButton2").disabled = true
+		if(!data.get("available_levels").has(level3_3_code)):
+			get_node("level_picker/level3/levelButton3").disabled = true
+		if(!data.get("available_levels").has(level3_4_code)):
+			get_node("level_picker/level4/levelButton4").disabled = true
+		if(!data.get("available_levels").has(level3_5_code)):
+			get_node("level_picker/level5/levelButton5").disabled = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if level_section == 1:
+		$main_level_label.text = "Humble Beginnings"
+	elif level_section == 2:
+		$main_level_label.text = "Individual Contributor"
+	elif level_section == 3:
+		$main_level_label.text = "The Corner Office"
 	
 
 func _on_level_button_mouse_entered() -> void:
@@ -92,3 +152,25 @@ func _on_level_button_5_mouse_exited() -> void:
 	
 func _on_main_menu_button_button_down() -> void:
 	back_to_main.emit()
+
+
+func _on_left_button_pressed() -> void:
+	if level_section > 1:
+		level_section = level_section - 1
+	if level_section == 1:
+		set_button_data(level_data, 1)
+	elif level_section == 2:
+		set_button_data(level_data, 2)
+	else:
+		set_button_data(level_data, 3)
+
+
+func _on_right_button_pressed() -> void:
+	if level_section < 3:
+		level_section = level_section + 1
+	if level_section == 1:
+		set_button_data(level_data, 1)
+	elif level_section == 2:
+		set_button_data(level_data, 2)
+	else:
+		set_button_data(level_data, 3)

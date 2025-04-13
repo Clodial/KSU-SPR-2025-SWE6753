@@ -46,6 +46,7 @@ func _go_to_level_select() -> void:
 	game_data = $PlayerProgress.load_game();
 	
 	level_select.game_data_set(game_data);
+	level_select.set_button_data(game_data, 1)
 	$Levels.add_child(level_select)
 	level_select.back_to_main.connect(self._go_to_main_menu.bind())
 	level_select.select_level1_1.connect(self._go_to_level.bind(level_select.level1_1, "level1_1"));
