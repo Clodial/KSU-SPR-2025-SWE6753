@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://60v8ngif5r60"]
+[gd_scene load_steps=13 format=4 uid="uid://60v8ngif5r60"]
 
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_45aht"]
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_tbx11"]
 [ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="2_7kl1c"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="3_ktvul"]
 [ext_resource type="PackedScene" uid="uid://bnjs0xujgfe0i" path="res://scenes/entitities/player/player.tscn" id="4_lrn0a"]
+[ext_resource type="AudioStream" uid="uid://sa00j8rywwpl" path="res://assets/sfx/goal_hit.wav" id="6_hide0"]
+[ext_resource type="AudioStream" uid="uid://c4u0rsu7b5et1" path="res://assets/sfx/goal_leave.wav" id="7_ptr4y"]
+[ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="8_7l7hh"]
+[ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="9_5qh7t"]
+[ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="10_ufqs0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m25cr"]
 texture = ExtResource("1_45aht")
@@ -64,3 +69,25 @@ position = Vector2(844, 853)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
 position = Vector2(1851, 890)
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="goal_hit" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_hide0")
+
+[node name="goal_leave" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("7_ptr4y")
+
+[node name="level_win" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("8_7l7hh")
+
+[node name="lose_a_life" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("9_5qh7t")
+
+[node name="whacked" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("10_ufqs0")
+
+[node name="RestartTimer" type="Timer" parent="."]
+
+[connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxejbdbge3gg7"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_32slf"]
+[sub_resource type="QuadMesh" id="QuadMesh_mm533"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c5viu"]
-radius = 64.3817
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd4if"]
+size = Vector2(128, 128)
 
 [node name="RotateableObjectPlatform" type="RigidBody2D"]
 collision_layer = 4
@@ -12,7 +12,7 @@ linear_velocity = Vector2(10, 0)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 scale = Vector2(128, 128)
-mesh = SubResource("SphereMesh_32slf")
+mesh = SubResource("QuadMesh_mm533")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_c5viu")
+shape = SubResource("RectangleShape2D_rd4if")

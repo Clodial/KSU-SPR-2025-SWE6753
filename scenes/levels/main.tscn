@@ -19,14 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level1-5.tscn" id="10_kkfhb"]
 [ext_resource type="Script" path="res://src/utils/PlayerProgress.gd" id="11_dv5h7"]
 [ext_resource type="AudioStream" uid="uid://7883ofvdfkkr" path="res://assets/sfx/exit.wav" id="12_hnkk2"]
-[ext_resource type="AudioStream" uid="uid://sa00j8rywwpl" path="res://assets/sfx/goal_hit.wav" id="13_jssyq"]
-[ext_resource type="AudioStream" uid="uid://c4u0rsu7b5et1" path="res://assets/sfx/goal_leave.wav" id="14_w3ohx"]
-[ext_resource type="AudioStream" uid="uid://dg8ihqgoy8tje" path="res://assets/sfx/jump.wav" id="15_67pdh"]
-[ext_resource type="AudioStream" uid="uid://cywnorttdhmj0" path="res://assets/sfx/land.wav" id="16_te4xf"]
-[ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="17_35ebs"]
-[ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="18_by0yi"]
-[ext_resource type="AudioStream" uid="uid://di08eh8s3wd4e" path="res://assets/sfx/wall_bump.wav" id="19_lhd8d"]
-[ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="20_cxqvi"]
+[ext_resource type="AudioStream" uid="uid://brbl0obpy5a6r" path="res://assets/sfx/select.wav" id="21_pmpnp"]
 
 [sub_resource type="Theme" id="Theme_lakch"]
 Button/colors/font_color = Color(0.25098, 0.439216, 0.501961, 1)
@@ -210,35 +203,12 @@ text = "SFX Volume"
 [node name="exit" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("12_hnkk2")
 
-[node name="goal_hit" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("13_jssyq")
-
-[node name="goal_leave" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("14_w3ohx")
-
-[node name="jump" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("15_67pdh")
-
-[node name="land" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("16_te4xf")
-
-[node name="level_win" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("17_35ebs")
-
-[node name="lose_a_life" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("18_by0yi")
-
 [node name="select" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("12_hnkk2")
-
-[node name="wall_bump" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("19_lhd8d")
-
-[node name="whacked" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("20_cxqvi")
+stream = ExtResource("21_pmpnp")
 
 [connection signal="ExitGame" from="PauseMenu" to="." method="_on_exit_game"]
 [connection signal="LevelSelect" from="PauseMenu" to="." method="_go_to_level_select"]
 [connection signal="pressed" from="PauseMenu/HUD/ContinueGameButton" to="PauseMenu" method="OnContinueGame"]
 [connection signal="pressed" from="PauseMenu/HUD/LevelsButton" to="PauseMenu" method="OnLevelSelect"]
 [connection signal="pressed" from="PauseMenu/HUD/ExitGameButton" to="PauseMenu" method="OnExitGame"]
+[connection signal="finished" from="SFX/exit" to="." method="_on_exit_finished"]

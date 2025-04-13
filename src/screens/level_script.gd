@@ -7,8 +7,11 @@ var level_finish
 var lives
 var level_code
 
+var level_game_over = false;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$RestartTimer.stop()
 	lives = 3;
 	player_goal = 0
 	level_finish = false;
@@ -24,20 +27,40 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if ( player_goal == 2 && level_finish == false):
+	if(player_goal == 2 && level_finish == false):
 		level_finish = true;
 		level_win.emit()
 
 func _goal_touch() -> void:
+	$SFX/goal_hit.play()
 	player_goal += 1;
 
 func _goal_leave() -> void:
+	$SFX/goal_leave.play()
 	player_goal -= 1;
 	
 func _process_level_lose(player1, player2, player1Marker, player2Marker) -> void:
 	if(lives > 1):
+		player1._set_life_loss(true)
+		player2._set_life_loss(true)
+		player1.get_node("PlayerAnimation").play("explosion")
+		player2.get_node("PlayerAnimation").play("explosion")
+		player1.get_node("PlayerAnimation").set_speed_scale(10)
+		player2.get_node("PlayerAnimation").set_speed_scale(10)
+		$SFX/lose_a_life.play()
+		player1.set_restart_position(player1Marker.position)
+		player2.set_restart_position(player2Marker.position)
 		lives = lives - 1;
-		player1.position = player1Marker.position
-		player2.position = player2Marker.position
+		$RestartTimer.start();
 	else:
-		level_lose.emit()
+		$SFX/whacked.play()
+
+func _on_whacked_finished() -> void:
+	level_lose.emit()
+
+
+func _on_restart_timer_timeout() -> void:
+	$Player._set_life_loss(false)
+	$Player2._set_life_loss(false)
+	$Player.get_node("PlayerAnimation").play("p1_idle")
+	$Player2.get_node("PlayerAnimation").play("p2_idle")
