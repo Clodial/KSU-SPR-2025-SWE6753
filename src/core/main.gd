@@ -94,6 +94,8 @@ func level_unlock(cur_level) -> void:
 		next_level = level_appender("level1_5")
 	elif(cur_level == "level1_5"):
 		next_level = level_appender("level2_1")
+		song_position = 0.0
+		$level_music.stop()
 	elif(cur_level == "level2_1"):
 		next_level = level_appender("level2_2")
 	elif(cur_level == "level2_2"):
@@ -104,6 +106,8 @@ func level_unlock(cur_level) -> void:
 		next_level = level_appender("level2_5")
 	elif(cur_level == "level2_5"):
 		next_level = level_appender("level3_1")
+		song_position = 0.0
+		$level_2_music.stop()
 	elif(cur_level == "level3_1"):
 		next_level = level_appender("level3_2")
 	elif(cur_level == "level3_2"):
@@ -143,14 +147,29 @@ func _go_to_level(level, level_code) -> void:
 		$Levels.remove_child(n)
 		n.queue_free()
 	var newLevel = level.instantiate()
+	if(level_code == "level1_1" 
+		|| level_code == "level1_2"
+		|| level_code == "level1_3"
+		|| level_code == "level1_4"
+		|| level_code == "level1_5"):
+		active_song = $level_music
+	elif(level_code == "level2_1" 
+		|| level_code == "level2_2"
+		|| level_code == "level2_3"
+		|| level_code == "level2_4"
+		|| level_code == "level2_5"):
+		active_song = $level_2_music
+	else:
+		active_song = $level_3_music
+	
 	$Levels.add_child(newLevel);
 	$SceneManager.SetCurrentScene(newLevel)
 	newLevel.level_win.connect(self.level_unlock.bind(level_code));
 	newLevel.level_lose.connect(self._go_to_level_select.bind());
 	$level_select_music.stop();
 	$menu_music.stop();
-	if(!$level_music.playing):
-		$level_music.play(song_position);
+	if(!active_song.playing):
+		active_song.play(song_position);
 
 func pause_level_music() -> void:
 	song_position = active_song.get_playback_position()

@@ -24,8 +24,17 @@ level1_4 = ExtResource("5_nwck8")
 level1_4_text = "Blocked User Story"
 level1_5 = ExtResource("6_hcucn")
 level1_5_text = "Sisyphian Step Meeting"
+level2_1 = ExtResource("2_xqra0")
 level2_2 = ExtResource("7_7l6mq")
 level2_2_text = "Elevated Responsibilities"
+level2_3 = ExtResource("2_xqra0")
+level2_4 = ExtResource("2_xqra0")
+level2_5 = ExtResource("2_xqra0")
+level3_1 = ExtResource("2_xqra0")
+level3_2 = ExtResource("2_xqra0")
+level3_3 = ExtResource("2_xqra0")
+level3_4 = ExtResource("2_xqra0")
+level3_5 = ExtResource("2_xqra0")
 
 [node name="background" type="ColorRect" parent="."]
 anchors_preset = 15
