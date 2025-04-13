@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dc7uo0ty12lgi"]
+[gd_scene load_steps=10 format=4 uid="uid://dc7uo0ty12lgi"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_l2r6b"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="2_8m7yp"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="7_1lms0"]
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_vkyu5"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_racgm"]
-[ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="10_vsht1"]
 
 [node name="Level1-1" type="Node2D"]
 process_mode = 1
@@ -73,9 +72,6 @@ stream = ExtResource("8_vkyu5")
 stream = ExtResource("9_racgm")
 
 [node name="RestartTimer" type="Timer" parent="."]
-
-[node name="Pitfall" parent="." instance=ExtResource("10_vsht1")]
-position = Vector2(411, 1107)
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
