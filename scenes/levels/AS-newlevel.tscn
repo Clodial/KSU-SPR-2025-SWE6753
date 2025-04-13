@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://crraye2grejyo"]
+[gd_scene load_steps=7 format=4 uid="uid://buq677dmmkalb"]
 
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_rl518"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="2_m8dht"]

@@ -89,7 +89,6 @@ func _go_to_level_select() -> void:
 	active_song.stop();
 
 func _go_to_settings_menu() -> void:
-	print("go_to_settings_menu")
 	for n in $Levels.get_children():
 		$Levels.remove_child(n)
 		n.queue_free()
