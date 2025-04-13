@@ -85,7 +85,7 @@ func _go_to_level_select() -> void:
 	$SceneManager.SetCurrentScene(level_select)
 	$menu_music.stop();
 	$level_select_music.play();
-	song_position = active_song.get_playback_position();
+	song_position = 0.0;
 	active_song.stop();
 
 func _go_to_settings_menu() -> void:
@@ -158,6 +158,9 @@ func level_unlock(cur_level) -> void:
 		_go_to_level($SceneManager.GetScene(next_level), next_level)
 
 func _on_exit_game() -> void:
+	if(game_data != null):
+		var available_levels = game_data.get("available_levels")
+		$PlayerProgress.set_progress_add_level(available_levels)
 	$SFX/exit.play()
 
 func _go_to_main_menu() -> void:
