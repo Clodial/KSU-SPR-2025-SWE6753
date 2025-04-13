@@ -98,7 +98,17 @@ var available_levels = [
 	level1_2_code,
 	level1_3_code,
 	level1_4_code,
-	level1_5_code
+	level1_5_code,
+	level2_1_code,
+	level2_2_code,
+	level2_3_code,
+	level2_4_code,
+	level2_5_code,
+	level3_1_code,
+	level3_2_code,
+	level3_3_code,
+	level3_4_code,
+	level3_5_code
 ]
 
 # Called when the node enters the scene tree for the first time.

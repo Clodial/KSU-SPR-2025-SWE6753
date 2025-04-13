@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://jw0lal71ipa0"]
+[gd_scene load_steps=17 format=4 uid="uid://jw0lal71ipa0"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_hb6fw"]
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="2_77saq"]
@@ -40,6 +40,12 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_n0tm5")
 
+[sub_resource type="Curve2D" id="Curve2D_q5rq5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 582, 59, 0, 0, 0, 0, -522, 59)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_mwwqc"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -555, 140, 0, 0, 0, 0, -54, 142)
@@ -73,6 +79,7 @@ position = Vector2(1052, 1012)
 
 [node name="Path2D" parent="." instance=ExtResource("6_ux3dw")]
 position = Vector2(1215, 566)
+curve = SubResource("Curve2D_q5rq5")
 loop = false
 speed = 0.5
 speed_scale = 0.4

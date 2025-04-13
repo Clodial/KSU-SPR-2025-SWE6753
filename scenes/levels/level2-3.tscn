@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://br0pvmlphmmed"]
+[gd_scene load_steps=16 format=4 uid="uid://br0pvmlphmmed"]
 
 [ext_resource type="Texture2D" uid="uid://bguekbo1c05pt" path="res://assets/test/block.png" id="1_7ng8w"]
 [ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="2_iqyhc"]
@@ -40,6 +40,12 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_whsj5")
 
+[sub_resource type="Curve2D" id="Curve2D_4y1ls"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 333, 8, 0, 0, 0, 0, -426, -1)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_i3iqm"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -327, 311, 0, 0, 0, 0, 47, 146)
@@ -68,6 +74,7 @@ tile_set = SubResource("TileSet_6legh")
 
 [node name="Path2D" parent="." instance=ExtResource("2_iqyhc")]
 position = Vector2(1038, 737)
+curve = SubResource("Curve2D_4y1ls")
 loop = false
 
 [node name="Path2D3" parent="." instance=ExtResource("2_iqyhc")]
