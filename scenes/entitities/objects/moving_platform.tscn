@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://disje1roesrxw"]
 
 [ext_resource type="Script" path="res://src/core/moving_platform.gd" id="1_yfvxk"]
-[ext_resource type="Texture2D" uid="uid://bdy7410j02rqj" path="res://assets/test/newEnemy2.png" id="2_hss4d"]
+[ext_resource type="Texture2D" uid="uid://cju1skijd4jfg" path="res://assets/moving_platform.png" id="2_2snla"]
 
 [sub_resource type="Curve2D" id="Curve2D_ovkeo"]
 _data = {
@@ -10,7 +10,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckdi3"]
-size = Vector2(37.9926, 94.621)
+size = Vector2(64, 32)
 
 [sub_resource type="Animation" id="Animation_5cryv"]
 length = 0.001
@@ -56,7 +56,6 @@ script = ExtResource("1_yfvxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-126, -175)
-rotation = 1.5708
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
@@ -64,15 +63,12 @@ remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(-126, -175)
-rotation = 1.5708
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-scale = Vector2(0.2, 0.5)
-texture = ExtResource("2_hss4d")
+texture = ExtResource("2_2snla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(1.94641, -16.5554)
 shape = SubResource("RectangleShape2D_ckdi3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
