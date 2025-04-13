@@ -15,7 +15,6 @@ func _ready() -> void:
 	var block_check = get_node_or_null("giantBlock")
 	if(block_check):
 		restarting_item = block_check.position
-		print(restarting_item)
 	$RestartTimer.stop()
 	lives = 3;
 	player_goal = 0

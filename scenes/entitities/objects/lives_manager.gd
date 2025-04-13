@@ -15,7 +15,6 @@ func ready():
 func lose_life():
 	if lives > 0:
 		lives -= 1
-		print("Lives Remaining: " + str(lives))
 	elif lives == 0:
 		level_is_lost.emit()
 
