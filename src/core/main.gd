@@ -17,6 +17,12 @@ func _ready() -> void:
 	var start_game_level = start_level.instantiate();
 	$Levels.add_child(start_game_level);
 	$SceneManager.SetCurrentScene(start_game_level);
+	game_data = $PlayerProgress.load_game()
+	var continueButton = start_game_level.get_node("HUD/ContinueGameButton")
+	if(game_data.get("available_levels").back() == "level1_1"):
+		continueButton.set_disabled(true)
+	else:
+		continueButton.set_disabled(false)
 	start_game_level.start_game.connect(self._on_start_game.bind())
 	start_game_level.continue_game.connect(self._on_continue_game.bind())
 	start_game_level.settings_menu.connect(self._on_settings_menu.bind())
@@ -52,8 +58,10 @@ func _on_continue_game() -> void:
 		_go_to_level_select()
 		
 func _on_settings_menu() -> void:
-	print("on_settings_menu")
 	$SFX/select.play()
+	if(game_data != null):
+		var available_levels = game_data.get("available_levels")
+		$PlayerProgress.set_progress_add_level(available_levels)
 	_go_to_settings_menu()
 	
 func _go_to_level_select() -> void:
@@ -170,6 +178,8 @@ func _go_to_main_menu() -> void:
 	var start_game_level = start_level.instantiate();
 	$Levels.add_child(start_game_level);
 	$SceneManager.SetCurrentScene(start_game_level)
+	var continueButton = start_game_level.get_node("HUD/ContinueGameButton")
+	print(continueButton)
 	start_game_level.start_game.connect(self._on_start_game.bind())
 	start_game_level.continue_game.connect(self._on_continue_game.bind())
 	start_game_level.settings_menu.connect(self._on_settings_menu.bind())

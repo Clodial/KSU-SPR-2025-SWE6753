@@ -47,9 +47,9 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 theme = SubResource("Theme_xjjmm")
-theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
-theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/font_hover_color = Color(0.933333, 0.513726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.12549, 0.47451, 0.286275, 1)
+theme_override_colors/font_color = Color(1, 0.768627, 0.176471, 1)
 theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
@@ -67,9 +67,9 @@ offset_bottom = 300.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 theme = SubResource("Theme_xjjmm")
-theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
-theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/font_hover_color = Color(0.933333, 0.513726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.12549, 0.47451, 0.286275, 1)
+theme_override_colors/font_color = Color(1, 0.768627, 0.176471, 1)
 theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
@@ -90,9 +90,9 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 theme = SubResource("Theme_xjjmm")
-theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
-theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/font_hover_color = Color(0.933333, 0.513726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.12549, 0.47451, 0.286275, 1)
+theme_override_colors/font_color = Color(1, 0.768627, 0.176471, 1)
 theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
@@ -113,9 +113,9 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 theme = SubResource("Theme_xjjmm")
-theme_override_colors/font_hover_color = Color(0.984314, 0.72549, 0.329412, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.439216, 0.501961, 1)
-theme_override_colors/font_color = Color(0.156863, 0.207843, 0.243137, 1)
+theme_override_colors/font_hover_color = Color(0.933333, 0.513726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.12549, 0.47451, 0.286275, 1)
+theme_override_colors/font_color = Color(1, 0.768627, 0.176471, 1)
 theme_override_colors/icon_normal_color = Color(0.984314, 0.72549, 0.329412, 1)
 theme_override_fonts/font = ExtResource("1_qpich")
 theme_override_font_sizes/font_size = 64
@@ -135,6 +135,22 @@ text = "Credits:
 Adam Salam - Programming
 Alex Smith - Programming & Character Art
 Matt Maravilla - Programming, Level Art, Audio"
+
+[node name="Label2" type="Label" parent="HUD"]
+offset_left = 1073.0
+offset_top = 657.0
+offset_right = 1622.0
+offset_bottom = 952.0
+theme = SubResource("Theme_8wjj1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qpich")
+theme_override_font_sizes/font_size = 40
+text = "Controls:
+Left Arrow - Move Left
+Right Arrow - Move Right
+Space - Jump
+Esc - Pause
+Left Mouse Button - Select Options"
 
 [connection signal="pressed" from="HUD/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="HUD/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
