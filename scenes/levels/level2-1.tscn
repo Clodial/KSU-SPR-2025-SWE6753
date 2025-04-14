@@ -115,5 +115,15 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(320, 918)
 scale = Vector2(0.5, 0.5)
 
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 256.0
+offset_right = 272.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hd52w")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
+
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

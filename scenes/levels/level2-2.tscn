@@ -138,5 +138,15 @@ stream = ExtResource("10_y0j25")
 
 [node name="RestartTimer" type="Timer" parent="."]
 
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 272.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_at454")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
+
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

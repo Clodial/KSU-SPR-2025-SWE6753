@@ -95,14 +95,24 @@ position = Vector2(224, 428)
 position = Vector2(96, 428)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 45.0
-offset_top = 44.0
-offset_right = 229.0
-offset_bottom = 85.0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 405.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_wllrn")
 theme_override_font_sizes/font_size = 40
 text = "Sisyphian Step Meeting"
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 88.0
+offset_right = 232.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_wllrn")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

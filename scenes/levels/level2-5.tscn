@@ -139,5 +139,15 @@ position = Vector2(-125, 794)
 curve = SubResource("Curve2D_l41v3")
 loop = false
 
+[node name="LivesLabel2" type="Label" parent="."]
+offset_left = 680.0
+offset_top = 152.0
+offset_right = 864.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_548v5")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
+
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
