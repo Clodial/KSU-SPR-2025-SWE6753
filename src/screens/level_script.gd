@@ -6,7 +6,7 @@ signal level_win
 signal level_lose
 var player_goal
 var level_finish
-var lives
+var lives = 3
 var level_code
 
 var level_game_over = false;
@@ -18,8 +18,7 @@ func _ready() -> void:
 	if(block_check):
 		restarting_item = block_check.position
 	$RestartTimer.stop()
-	lives = 3;
-	livesLable.text = "Lives: " + str(lives)
+	$LivesLabel.text = "Lives: " + str(lives)
 	player_goal = 0
 	level_finish = false;
 	$Goal_P1.player_touch.connect(self._goal_touch.bind())

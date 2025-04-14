@@ -76,3 +76,13 @@ stream = ExtResource("8_2x86a")
 stream = ExtResource("9_y47y7")
 
 [node name="RestartTimer" type="Timer" parent="."]
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 1661.0
+offset_top = 104.0
+offset_right = 1845.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qc2ys")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"

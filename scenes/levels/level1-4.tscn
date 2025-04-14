@@ -28,10 +28,10 @@ offset_bottom = 1080.0
 color = Color(0.537255, 1, 1, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 110.0
-offset_top = 61.0
-offset_right = 403.0
-offset_bottom = 102.0
+offset_left = 104.0
+offset_top = 64.0
+offset_right = 397.0
+offset_bottom = 105.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_2uh8r")
 theme_override_font_sizes/font_size = 40
@@ -126,6 +126,16 @@ mass = 15.0
 
 [node name="giantBlockMarker" type="Marker2D" parent="."]
 position = Vector2(436, 803)
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 104.0
+offset_right = 288.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_2uh8r")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
