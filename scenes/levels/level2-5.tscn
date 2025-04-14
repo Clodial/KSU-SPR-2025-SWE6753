@@ -139,7 +139,7 @@ position = Vector2(-125, 794)
 curve = SubResource("Curve2D_l41v3")
 loop = false
 
-[node name="LivesLabel2" type="Label" parent="."]
+[node name="LivesLabel" type="Label" parent="."]
 offset_left = 680.0
 offset_top = 152.0
 offset_right = 864.0
