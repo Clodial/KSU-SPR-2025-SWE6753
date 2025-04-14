@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var livesLable: Label
-
 signal level_win
 signal level_lose
 var player_goal
