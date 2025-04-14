@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var livesLable: Label
-
 signal level_win
 signal level_lose
 var player_goal
@@ -62,7 +60,7 @@ func _process_level_lose(player1, player2, player1Marker, player2Marker) -> void
 		player1.set_restart_position(player1Marker.position)
 		player2.set_restart_position(player2Marker.position)
 		lives = lives - 1;
-		livesLable.text = "Lives: " + str(lives)
+		$LivesLabel.text = "Lives: " + str(lives)
 		$RestartTimer.start();
 	else:
 		$SFX/whacked.play()
