@@ -11,10 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_vkyu5"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_racgm"]
 
-[node name="Level1-1" type="Node2D" node_paths=PackedStringArray("livesLable")]
+[node name="Level1-1" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_l2r6b")
-livesLable = NodePath("LivesLabel")
 
 [node name="pl1_box" type="ColorRect" parent="."]
 offset_left = 3.0

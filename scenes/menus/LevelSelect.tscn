@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjofmlf2om3ck"]
+[gd_scene load_steps=17 format=3 uid="uid://bjofmlf2om3ck"]
 
 [ext_resource type="Script" path="res://src/screens/level_select.gd" id="1_euc36"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_u8y4q"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://br0pvmlphmmed" path="res://scenes/levels/level2-2.tscn" id="8_hw7sk"]
 [ext_resource type="PackedScene" uid="uid://buvf4qxqeadcu" path="res://scenes/levels/level2-3.tscn" id="9_7s8l5"]
 [ext_resource type="PackedScene" uid="uid://5msp7nctos76" path="res://scenes/levels/level2-5.tscn" id="9_qukkr"]
+[ext_resource type="PackedScene" uid="uid://cfr3mx626ntt4" path="res://scenes/levels/level2-4.tscn" id="10_ddtn8"]
 [ext_resource type="Texture2D" uid="uid://b6imkxhmirt14" path="res://assets/test/arrow.png" id="11_mt34y"]
 
 [node name="LevelSelect" type="Node"]
@@ -34,7 +35,7 @@ level2_2 = ExtResource("8_hw7sk")
 level2_2_text = "Paired Programming"
 level2_3 = ExtResource("9_7s8l5")
 level2_3_text = "Morning Standup"
-level2_4 = ExtResource("2_xqra0")
+level2_4 = ExtResource("10_ddtn8")
 level2_4_text = "Year-End Review"
 level2_5 = ExtResource("9_qukkr")
 level2_5_text = "No Gold Parachutes"

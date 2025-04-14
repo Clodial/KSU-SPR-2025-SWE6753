@@ -26,7 +26,6 @@ public partial class SceneManager : Node
 	public override void _Ready(){
 		for(int i = 0; i < levels.Length; i++){
 			string levelName = "level" + ((i / 5)+1) + "_" + ((i % 5)+1);
-			GD.Print("Levels: " + levelName);
 			levelDictionary.Add(levelName, levels[i]);
 		}
 	}
