@@ -11,9 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_vkyu5"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_racgm"]
 
-[node name="Level1-1" type="Node2D"]
+[node name="Level1-1" type="Node2D" node_paths=PackedStringArray("livesLable")]
 process_mode = 1
 script = ExtResource("1_l2r6b")
+livesLable = NodePath("LivesLabel")
 
 [node name="pl1_box" type="ColorRect" parent="."]
 offset_left = 3.0
@@ -38,6 +39,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_kbcxc")
 theme_override_font_sizes/font_size = 40
 text = "Jumping Off"
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 1661.0
+offset_top = 104.0
+offset_right = 1845.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kbcxc")
+theme_override_font_sizes/font_size = 40
+text = "Lives:"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 32)
