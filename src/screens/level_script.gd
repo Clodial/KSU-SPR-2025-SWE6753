@@ -4,7 +4,7 @@ signal level_win
 signal level_lose
 var player_goal
 var level_finish
-var lives = 3
+var deaths = 0
 var level_code
 
 var level_game_over = false;
@@ -16,7 +16,7 @@ func _ready() -> void:
 	if(block_check):
 		restarting_item = block_check.position
 	$RestartTimer.stop()
-	$LivesLabel.text = "Lives: " + str(lives)
+	$LivesLabel.text = "Deaths: " + str(deaths)
 	player_goal = 0
 	level_finish = false;
 	$Goal_P1.player_touch.connect(self._goal_touch.bind())
@@ -44,30 +44,23 @@ func _goal_leave() -> void:
 	player_goal -= 1;
 	
 func _process_level_lose(player1, player2, player1Marker, player2Marker) -> void:
-	if(lives > 1):
-		var bigBlock = get_node_or_null("giantBlock")
-		var blockMarker = get_node_or_null("giantBlockMarker")
-		if(bigBlock && blockMarker):
-			bigBlock.global_transform.origin = blockMarker.position 
-			bigBlock.rotation = 0.0
-		player1._set_life_loss(true)
-		player2._set_life_loss(true)
-		player1.get_node("PlayerAnimation").play("explosion")
-		player2.get_node("PlayerAnimation").play("explosion")
-		player1.get_node("PlayerAnimation").set_speed_scale(10)
-		player2.get_node("PlayerAnimation").set_speed_scale(10)
-		$SFX/lose_a_life.play()
-		player1.set_restart_position(player1Marker.position)
-		player2.set_restart_position(player2Marker.position)
-		lives = lives - 1;
-		$LivesLabel.text = "Lives: " + str(lives)
-		$RestartTimer.start();
-	else:
-		$SFX/whacked.play()
-
-func _on_whacked_finished() -> void:
-	level_lose.emit()
-
+	var bigBlock = get_node_or_null("giantBlock")
+	var blockMarker = get_node_or_null("giantBlockMarker")
+	if(bigBlock && blockMarker):
+		bigBlock.global_transform.origin = blockMarker.position 
+		bigBlock.rotation = 0.0
+	player1._set_life_loss(true)
+	player2._set_life_loss(true)
+	player1.get_node("PlayerAnimation").play("explosion")
+	player2.get_node("PlayerAnimation").play("explosion")
+	player1.get_node("PlayerAnimation").set_speed_scale(10)
+	player2.get_node("PlayerAnimation").set_speed_scale(10)
+	$SFX/lose_a_life.play()
+	player1.set_restart_position(player1Marker.position)
+	player2.set_restart_position(player2Marker.position)
+	deaths += 1
+	$LivesLabel.text = "Deaths: " + str(deaths)
+	$RestartTimer.start();
 
 func _on_restart_timer_timeout() -> void:
 	$Player._set_life_loss(false)
