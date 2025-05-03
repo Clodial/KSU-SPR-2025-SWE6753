@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://br0pvmlphmmed"]
+[gd_scene load_steps=17 format=4 uid="uid://cc60u1i5stg60"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_4xbdp"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="1_fg1df"]
@@ -107,17 +107,17 @@ position = Vector2(818, 224)
 position = Vector2(1796, 160)
 
 [node name="Player" parent="." instance=ExtResource("5_pj2f3")]
-position = Vector2(112, 960)
+position = Vector2(112, 993)
 
 [node name="Player2" parent="." instance=ExtResource("5_pj2f3")]
-position = Vector2(1104, 960)
+position = Vector2(1104, 993)
 playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
-position = Vector2(112, 960)
+position = Vector2(112, 993)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(1104, 960)
+position = Vector2(1104, 993)
 
 [node name="SFX" type="Node" parent="."]
 

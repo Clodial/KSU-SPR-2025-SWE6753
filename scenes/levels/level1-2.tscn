@@ -40,19 +40,19 @@ position = Vector2(143, 352)
 position = Vector2(834, 576)
 
 [node name="Player" parent="." instance=ExtResource("3_ugvgu")]
-position = Vector2(147, 952)
+position = Vector2(147, 954)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("3_ugvgu")]
-position = Vector2(965, 823)
+position = Vector2(965, 826)
 scale = Vector2(0.5, 0.5)
 playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
-position = Vector2(146, 952)
+position = Vector2(147, 953)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(966, 798)
+position = Vector2(965, 825)
 
 [node name="SFX" type="Node" parent="."]
 

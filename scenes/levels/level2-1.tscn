@@ -74,17 +74,17 @@ position = Vector2(736, 512)
 position = Vector2(1462, 448)
 
 [node name="Player" parent="." instance=ExtResource("5_bypcj")]
-position = Vector2(814, 914)
+position = Vector2(814, 961)
 
 [node name="Player2" parent="." instance=ExtResource("5_bypcj")]
-position = Vector2(1135, 910)
+position = Vector2(1135, 961)
 playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
-position = Vector2(815, 921)
+position = Vector2(814, 961)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(1136, 921)
+position = Vector2(1135, 961)
 
 [node name="SFX" type="Node" parent="."]
 

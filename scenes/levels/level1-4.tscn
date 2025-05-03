@@ -52,7 +52,7 @@ position = Vector2(159, 375)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("4_yndfm")]
-position = Vector2(193, 920)
+position = Vector2(193, 922)
 scale = Vector2(0.5, 0.5)
 playerOne = false
 
@@ -60,7 +60,7 @@ playerOne = false
 position = Vector2(159, 362)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(193, 921)
+position = Vector2(193, 922)
 
 [node name="SFX" type="Node" parent="."]
 
