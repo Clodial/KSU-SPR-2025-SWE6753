@@ -368,7 +368,7 @@ size = Vector2(100, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gont3"]
 size = Vector2(97.5, 125)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.4, 0.4)
 collision_mask = 6
 platform_floor_layers = 4294967294
@@ -406,3 +406,4 @@ stream = ExtResource("13_upf2c")
 
 [connection signal="animation_looped" from="PlayerAnimation" to="." method="_on_player_animation_animation_looped"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -111,6 +111,13 @@ func set_restart_position(position):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !life_loss && body.is_in_group("enemy"):
 		enemy_collision.emit();
+	if body.is_in_group("tutorial"):
+		print('yo')
+		get_node(body.get_path()).writeText()
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("tutorial"):
+		get_node(body.get_path()).clearText()
 		
 
 func _on_player_animation_animation_looped() -> void:
