@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cias3gshk3yce" path="res://scenes/levels/level1-3.tscn" id="4_rijkg"]
 [ext_resource type="PackedScene" uid="uid://bn04gaph6bsp7" path="res://scenes/levels/level1-4.tscn" id="5_nwck8"]
 [ext_resource type="PackedScene" uid="uid://60v8ngif5r60" path="res://scenes/levels/level1-5.tscn" id="6_hcucn"]
-[ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level3-1.tscn" id="6_pbf1n"]
+[ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level3-2.tscn" id="6_pbf1n"]
 [ext_resource type="Texture2D" uid="uid://ilqb15jng5li" path="res://assets/test/unlocked_level.png" id="7_2ljp2"]
 [ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level2-1.tscn" id="7_7l6mq"]
 [ext_resource type="Texture2D" uid="uid://dubp5rjifgk6s" path="res://assets/test/locked_level.png" id="8_fukap"]

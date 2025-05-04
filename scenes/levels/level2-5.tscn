@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cqfmis0dunmdp"]
+[gd_scene load_steps=17 format=4 uid="uid://5msp7nctos76"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_wdy57"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_548v5"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="8_asaep"]
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="9_rfnoq"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="10_g8leu"]
-[ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_jqcco"]
+[ext_resource type="PackedScene" uid="uid://3qrxgbsp3wlj" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_jqcco"]
 
 [sub_resource type="Curve2D" id="Curve2D_4spll"]
 _data = {
