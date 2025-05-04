@@ -108,19 +108,19 @@ position = Vector2(1056, 352)
 position = Vector2(1681, 896)
 
 [node name="Player" parent="." instance=ExtResource("4_jphaf")]
-position = Vector2(256, 704)
+position = Vector2(256, 730)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("4_jphaf")]
-position = Vector2(1728, 256)
+position = Vector2(1728, 282)
 scale = Vector2(0.5, 0.5)
 playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
-position = Vector2(256, 704)
+position = Vector2(256, 729)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(1728, 256)
+position = Vector2(1728, 282)
 
 [node name="SFX" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://5msp7nctos76"]
+[gd_scene load_steps=17 format=4 uid="uid://cqfmis0dunmdp"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_wdy57"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_548v5"]
@@ -85,15 +85,15 @@ position = Vector2(241, 331)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player2" parent="." instance=ExtResource("5_lulqp")]
-position = Vector2(810, 691)
+position = Vector2(812, 698)
 scale = Vector2(0.5, 0.5)
 playerOne = false
 
 [node name="Player1Marker" type="Marker2D" parent="."]
-position = Vector2(241, 335)
+position = Vector2(241, 331)
 
 [node name="Player2Marker" type="Marker2D" parent="."]
-position = Vector2(812, 692)
+position = Vector2(812, 698)
 
 [node name="SFX" type="Node" parent="."]
 
