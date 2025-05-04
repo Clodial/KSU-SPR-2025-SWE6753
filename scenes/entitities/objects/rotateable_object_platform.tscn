@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxejbdbge3gg7"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_mm533"]
+[ext_resource type="Texture2D" uid="uid://cpshb6h1btwt5" path="res://assets/pixelArtEntities/rotateable-object.png" id="1_3oveh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd4if"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crwuj"]
 size = Vector2(128, 128)
 
 [node name="RotateableObjectPlatform" type="RigidBody2D"]
@@ -10,9 +10,10 @@ collision_layer = 4
 collision_mask = 2
 linear_velocity = Vector2(10, 0)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(128, 128)
-mesh = SubResource("QuadMesh_mm533")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(2, 2)
+texture = ExtResource("1_3oveh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rd4if")
+shape = SubResource("RectangleShape2D_crwuj")
