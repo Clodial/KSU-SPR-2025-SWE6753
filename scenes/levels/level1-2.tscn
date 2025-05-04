@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d2d1tw7abfoi4"]
+[gd_scene load_steps=13 format=4 uid="uid://d2d1tw7abfoi4"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_agq1h"]
 [ext_resource type="PackedScene" uid="uid://q0w4io34wy7m" path="res://scenes/entitities/objects/goal.tscn" id="2_smoqs"]
@@ -10,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_pbu28"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_4ppld"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="10_m3sxh"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="11_yiow3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpi2j"]
+size = Vector2(288, 356)
 
 [node name="Level1-2" type="Node2D"]
 process_mode = 1
@@ -92,6 +96,27 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_m3sxh")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("11_yiow3")
+textLabel = "tutorialText1"
+tutorialWords = "Sometimes, you have to go backwards before jumping forwards."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(211, -212)
+shape = SubResource("RectangleShape2D_rpi2j")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = 579.0
+offset_top = -438.0
+offset_right = 904.0
+offset_bottom = -344.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_m3sxh")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

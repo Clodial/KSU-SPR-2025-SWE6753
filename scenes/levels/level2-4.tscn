@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cmdcjj7s51h5r"]
+[gd_scene load_steps=22 format=4 uid="uid://cfr3mx626ntt4"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_854po"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="1_qc2ys"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="10_l21tb"]
 [ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_olg1o"]
 [ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="12_7h3xn"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="14_mbyef"]
 
 [sub_resource type="Curve2D" id="Curve2D_hfpe2"]
 _data = {
@@ -49,6 +50,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 448, -424, 0, 0, 0, 0, 1216, -424)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q010s"]
+size = Vector2(496, 240)
 
 [node name="Level2-4" type="Node2D"]
 script = ExtResource("1_854po")
@@ -220,6 +224,27 @@ position = Vector2(346, 88)
 position = Vector2(448, 648)
 curve = SubResource("Curve2D_cnyo2")
 loop = false
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("14_mbyef")
+textLabel = "tutorialText1"
+tutorialWords = "Ever wondered how someone can have it so much easier than someone else?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(139, -718)
+shape = SubResource("RectangleShape2D_q010s")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = 411.0
+offset_top = -478.0
+offset_right = 736.0
+offset_bottom = -384.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qc2ys")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
