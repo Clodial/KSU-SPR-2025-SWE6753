@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dc7uo0ty12lgi"]
+[gd_scene load_steps=12 format=4 uid="uid://dc7uo0ty12lgi"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_l2r6b"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="2_8m7yp"]
@@ -10,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="7_1lms0"]
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="8_vkyu5"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_racgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnl6s"]
+size = Vector2(74, 50)
 
 [node name="Level1-1" type="Node2D"]
 process_mode = 1
@@ -93,5 +96,22 @@ stream = ExtResource("8_vkyu5")
 stream = ExtResource("9_racgm")
 
 [node name="RestartTimer" type="Timer" parent="."]
+
+[node name="tutorial" type="Node" parent="."]
+
+[node name="tutorialArea1" type="Area2D" parent="tutorial"]
+position = Vector2(317, 838)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorial/tutorialArea1"]
+shape = SubResource("RectangleShape2D_rnl6s")
+
+[node name="tutorialText1" type="Label" parent="tutorial"]
+offset_left = 531.0
+offset_top = 290.0
+offset_right = 668.0
+offset_bottom = 369.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kbcxc")
+theme_override_font_sizes/font_size = 20
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
