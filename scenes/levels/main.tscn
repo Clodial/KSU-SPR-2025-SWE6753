@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b72oibj0wm0pj"]
+[gd_scene load_steps=33 format=3 uid="uid://b72oibj0wm0pj"]
 
 [ext_resource type="Script" path="res://src/core/main.gd" id="1_8x5c7"]
 [ext_resource type="PackedScene" uid="uid://c7u76uibw68f2" path="res://scenes/menus/StartScreen.tscn" id="2_hltfq"]
@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://buvf4qxqeadcu" path="res://scenes/levels/level2-3.tscn" id="14_1krmm"]
 [ext_resource type="PackedScene" uid="uid://5msp7nctos76" path="res://scenes/levels/level2-5.tscn" id="14_tooy1"]
 [ext_resource type="PackedScene" uid="uid://cfr3mx626ntt4" path="res://scenes/levels/level2-4.tscn" id="15_8fe1j"]
+[ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level3-1.tscn" id="18_d84l1"]
+[ext_resource type="PackedScene" uid="uid://dlay2r5nu3jpj" path="res://scenes/levels/level3-3.tscn" id="19_l41ok"]
+[ext_resource type="PackedScene" uid="uid://jw0lal71ipa0" path="res://scenes/levels/level3-4.tscn" id="20_8mjxx"]
+[ext_resource type="PackedScene" uid="uid://jw0lal71ipa0" path="res://scenes/levels/level3-5.tscn" id="21_1ivhx"]
 [ext_resource type="AudioStream" uid="uid://brbl0obpy5a6r" path="res://assets/sfx/select.wav" id="21_pmpnp"]
 
 [sub_resource type="Theme" id="Theme_lakch"]
@@ -48,7 +52,7 @@ test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("5_angnu")
-levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("14_1krmm"), ExtResource("15_8fe1j"), ExtResource("14_tooy1"), ExtResource("10_kkfhb"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc"), ExtResource("6_j54fc")])
+levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("14_1krmm"), ExtResource("15_8fe1j"), ExtResource("14_tooy1"), ExtResource("10_kkfhb"), ExtResource("18_d84l1"), ExtResource("19_l41ok"), ExtResource("20_8mjxx"), ExtResource("21_1ivhx")])
 
 [node name="Levels" type="Node" parent="."]
 
