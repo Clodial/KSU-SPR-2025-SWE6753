@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://buvf4qxqeadcu"]
+[gd_scene load_steps=25 format=4 uid="uid://buvf4qxqeadcu"]
 
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="1_845ka"]
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_m3q4g"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="9_xopx2"]
 [ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="11_aqfq1"]
 [ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="12_vdcxg"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="14_uq5el"]
 
 [sub_resource type="Curve2D" id="Curve2D_7lfi6"]
 _data = {
@@ -61,6 +62,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, -128, 0, 0, 0, 0, 0, 64)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpibr"]
+size = Vector2(544, 444)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp6tl"]
+size = Vector2(472, 768)
 
 [node name="Level2-3" type="Node2D"]
 script = ExtResource("1_m3q4g")
@@ -208,6 +215,45 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5pu26")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("14_uq5el")
+textLabel = "tutorialText1"
+tutorialWords = "Don't be afraid of some, trial and error."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(1275, -432)
+shape = SubResource("RectangleShape2D_kpibr")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = 1107.0
+offset_top = -750.0
+offset_right = 1432.0
+offset_bottom = -656.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5pu26")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("14_uq5el")
+textLabel = "Label"
+tutorialWords = "Maybe you just need a little momentum."
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = 672.0
+offset_top = 168.0
+offset_right = 832.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5pu26")
+theme_override_font_sizes/font_size = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(780, 448)
+shape = SubResource("RectangleShape2D_hp6tl")
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
