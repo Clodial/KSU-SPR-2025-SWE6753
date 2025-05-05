@@ -14,7 +14,7 @@ func writeText() -> void:
 		label.text = tutorialWords
 
 func clearText() -> void:
-	var label = get_node_or_null("tutorialText1")
+	var label = get_node_or_null(textLabel)
 	if(label):
 		label.text = ""
 

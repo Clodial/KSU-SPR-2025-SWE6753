@@ -112,7 +112,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !life_loss && body.is_in_group("enemy"):
 		enemy_collision.emit();
 	if body.is_in_group("tutorial"):
-		print('yo')
 		get_node(body.get_path()).writeText()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

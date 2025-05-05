@@ -237,7 +237,7 @@ theme_override_fonts/font = ExtResource("2_5pu26")
 theme_override_font_sizes/font_size = 24
 autowrap_mode = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["tutorial"]]
 script = ExtResource("14_uq5el")
 textLabel = "Label"
 tutorialWords = "Maybe you just need a little momentum."
@@ -251,7 +251,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5pu26")
 theme_override_font_sizes/font_size = 24
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["tutorial"]]
 position = Vector2(780, 448)
 shape = SubResource("RectangleShape2D_hp6tl")
 
