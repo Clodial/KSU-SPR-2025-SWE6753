@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://5msp7nctos76"]
+[gd_scene load_steps=19 format=4 uid="uid://5msp7nctos76"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_wdy57"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_548v5"]
@@ -10,7 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://dwucxo84etnhg" path="res://assets/sfx/level_win.wav" id="8_asaep"]
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="9_rfnoq"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="10_g8leu"]
-[ext_resource type="PackedScene" uid="uid://3qrxgbsp3wlj" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_jqcco"]
+[ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_jqcco"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="12_sfgy8"]
 
 [sub_resource type="Curve2D" id="Curve2D_4spll"]
 _data = {
@@ -41,6 +42,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 253, -410, 0, 0, 0, 0, 253, 102)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpunp"]
+size = Vector2(448, 832)
 
 [node name="Level2-5" type="Node2D"]
 script = ExtResource("1_wdy57")
@@ -148,6 +152,27 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_548v5")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("12_sfgy8")
+textLabel = "tutorialText1"
+tutorialWords = "But then again, things change fast."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(-29, -230)
+shape = SubResource("RectangleShape2D_xpunp")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = -181.0
+offset_top = -382.0
+offset_right = 144.0
+offset_bottom = -288.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_548v5")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

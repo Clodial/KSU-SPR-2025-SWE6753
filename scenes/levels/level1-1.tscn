@@ -13,10 +13,10 @@
 [ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="11_ulg4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnl6s"]
-size = Vector2(232, 87)
+size = Vector2(536, 320)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5xfm"]
-size = Vector2(290, 226)
+size = Vector2(416, 321)
 
 [node name="Level1-1" type="Node2D"]
 process_mode = 1
@@ -111,7 +111,7 @@ textLabel = "tutorialText1"
 tutorialWords = "You'll have to restart the level if you fall in the hole, there."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tutorial/tutorialArea1" groups=["tutorial"]]
-position = Vector2(-1, -18.5)
+position = Vector2(151, -30)
 shape = SubResource("RectangleShape2D_rnl6s")
 
 [node name="tutorialText1" type="Label" parent="tutorial/tutorialArea1"]
@@ -131,7 +131,7 @@ textLabel = "tutorialText1"
 tutorialWords = "To finish a level, you need both robots on the goal."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tutorial/tutorialArea2"]
-position = Vector2(104, 64)
+position = Vector2(56, 16.5)
 shape = SubResource("RectangleShape2D_b5xfm")
 
 [node name="tutorialText1" type="Label" parent="tutorial/tutorialArea2"]

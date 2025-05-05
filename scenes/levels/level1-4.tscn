@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bn04gaph6bsp7"]
+[gd_scene load_steps=15 format=4 uid="uid://bn04gaph6bsp7"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_jdn3u"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="3_lvg3h"]
@@ -12,6 +12,10 @@
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="11_2uh8r"]
 [ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="11_8fsep"]
 [ext_resource type="PackedScene" uid="uid://cxejbdbge3gg7" path="res://scenes/entitities/objects/rotateable_object_platform.tscn" id="11_xek0u"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="13_rywmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urwh5"]
+size = Vector2(216, 132)
 
 [node name="Level1-4" type="Node2D"]
 script = ExtResource("1_jdn3u")
@@ -136,6 +140,69 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_2uh8r")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("13_rywmj")
+textLabel = "tutorialText1"
+tutorialWords = "Moveable blocks will respawn where they started after a robot dies."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(637, 126)
+shape = SubResource("RectangleShape2D_urwh5")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = 835.0
+offset_top = 74.0
+offset_right = 1160.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_2uh8r")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="tutorialArea2" type="StaticBody2D" parent="."]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("13_rywmj")
+textLabel = "tutorialText1"
+tutorialWords = "Just because one robot moves forward, does that mean the other robot should move forward."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea2" groups=["tutorial"]]
+position = Vector2(11, -488)
+shape = SubResource("RectangleShape2D_urwh5")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea2"]
+offset_left = 155.0
+offset_top = -702.0
+offset_right = 480.0
+offset_bottom = -608.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_2uh8r")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="tutorialArea3" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("13_rywmj")
+textLabel = "tutorialText1"
+tutorialWords = "Have a little faith."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea3" groups=["tutorial"]]
+position = Vector2(695, -646)
+shape = SubResource("RectangleShape2D_urwh5")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea3"]
+offset_left = 859.0
+offset_top = -694.0
+offset_right = 1184.0
+offset_bottom = -600.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_2uh8r")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

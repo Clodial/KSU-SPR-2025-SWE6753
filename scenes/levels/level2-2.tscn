@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cc60u1i5stg60"]
+[gd_scene load_steps=19 format=4 uid="uid://br0pvmlphmmed"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_4xbdp"]
 [ext_resource type="TileSet" uid="uid://cqhd4f7drrt7s" path="res://tilesets/mainTileSet.tres" id="1_fg1df"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cisy5gjqxknq6" path="res://assets/sfx/lose_a_life.wav" id="9_2q8y2"]
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="10_y0j25"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="11_at454"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="12_3eq4q"]
 
 [sub_resource type="Curve2D" id="Curve2D_4y1ls"]
 _data = {
@@ -41,6 +42,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -144, 96, 0, 0, 0, 0, -144, -160)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcqkf"]
+size = Vector2(320, 352)
 
 [node name="Level2-2" type="Node2D"]
 process_mode = 1
@@ -147,6 +151,27 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_at454")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("12_3eq4q")
+textLabel = "tutorialText1"
+tutorialWords = "Okay, this HAS to be more crazy than before."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(451, -134)
+shape = SubResource("RectangleShape2D_kcqkf")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = -101.0
+offset_top = -182.0
+offset_right = 224.0
+offset_bottom = -88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_at454")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

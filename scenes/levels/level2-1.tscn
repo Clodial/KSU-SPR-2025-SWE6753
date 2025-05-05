@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dq0syv14pr0xy"]
+[gd_scene load_steps=18 format=4 uid="uid://dq0syv14pr0xy"]
 
 [ext_resource type="Script" path="res://src/screens/level_script.gd" id="1_bnl53"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="2_hd52w"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://6wryhecrqwso" path="res://assets/sfx/whacked.wav" id="10_0ou46"]
 [ext_resource type="PackedScene" uid="uid://disje1roesrxw" path="res://scenes/entitities/objects/moving_platform.tscn" id="11_skgj0"]
 [ext_resource type="PackedScene" uid="uid://g85syb8mnxe" path="res://scenes/entitities/Pitfall.tscn" id="12_rdjlo"]
+[ext_resource type="Script" path="res://scenes/levels/tutorial_text.gd" id="13_u80ru"]
 
 [sub_resource type="Curve2D" id="Curve2D_d6sbc"]
 _data = {
@@ -24,6 +25,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 310, 77, 0, 0, 0, 0, 310, -363)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vitrn"]
+size = Vector2(384, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1n8l"]
+size = Vector2(648, 312)
 
 [node name="level2-1" type="Node2D"]
 process_mode = 1
@@ -124,6 +131,47 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hd52w")
 theme_override_font_sizes/font_size = 40
 text = "Lives:"
+
+[node name="tutorialArea1" type="StaticBody2D" parent="." groups=["tutorial"]]
+position = Vector2(317, 838)
+collision_mask = 2
+script = ExtResource("13_u80ru")
+textLabel = "tutorialText1"
+tutorialWords = "Does it feel like these back and forth levels are getting annoying?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorialArea1" groups=["tutorial"]]
+position = Vector2(1083, 34)
+shape = SubResource("RectangleShape2D_vitrn")
+
+[node name="tutorialText1" type="Label" parent="tutorialArea1"]
+offset_left = 923.0
+offset_top = -286.0
+offset_right = 1248.0
+offset_bottom = -192.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hd52w")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["tutorial"]]
+collision_mask = 2
+script = ExtResource("13_u80ru")
+textLabel = "tutorialText1"
+tutorialWords = "It's gotta feel easier, though."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(476, 452)
+shape = SubResource("RectangleShape2D_j1n8l")
+
+[node name="tutorialText1" type="Label" parent="StaticBody2D"]
+offset_left = 656.0
+offset_top = 632.0
+offset_right = 832.0
+offset_bottom = 736.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hd52w")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [connection signal="finished" from="SFX/whacked" to="." method="_on_whacked_finished"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
