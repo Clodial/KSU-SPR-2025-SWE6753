@@ -18,7 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://c5df384yldclt" path="res://assets/music/ReturnOffer.wav" id="9_iarq8"]
 [ext_resource type="FontFile" uid="uid://crq6w4tkkoh7x" path="res://assets/Jersey25-Regular.ttf" id="10_f3fv4"]
 [ext_resource type="AudioStream" uid="uid://b0s3h15ryfdon" path="res://assets/music/AngelicPromotion.wav" id="10_jptom"]
-[ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level3-2.tscn" id="10_kkfhb"]
 [ext_resource type="Script" path="res://src/utils/PlayerProgress.gd" id="11_dv5h7"]
 [ext_resource type="AudioStream" uid="uid://7883ofvdfkkr" path="res://assets/sfx/exit.wav" id="12_hnkk2"]
 [ext_resource type="PackedScene" uid="uid://dq0syv14pr0xy" path="res://scenes/levels/level2-1.tscn" id="12_vuf7b"]
@@ -27,8 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://5msp7nctos76" path="res://scenes/levels/level2-5.tscn" id="14_tooy1"]
 [ext_resource type="PackedScene" uid="uid://cfr3mx626ntt4" path="res://scenes/levels/level2-4.tscn" id="15_8fe1j"]
 [ext_resource type="PackedScene" uid="uid://b112me52g52ks" path="res://scenes/levels/level3-1.tscn" id="18_d84l1"]
+[ext_resource type="PackedScene" uid="uid://daxtqk0npgbpi" path="res://scenes/levels/level3-2.tscn" id="18_wm42b"]
 [ext_resource type="PackedScene" uid="uid://dlay2r5nu3jpj" path="res://scenes/levels/level3-3.tscn" id="19_l41ok"]
-[ext_resource type="PackedScene" uid="uid://jw0lal71ipa0" path="res://scenes/levels/level3-4.tscn" id="20_8mjxx"]
+[ext_resource type="PackedScene" uid="uid://jw0lal71ipa0" path="res://scenes/levels/level3-4.tscn" id="20_m2q5v"]
 [ext_resource type="PackedScene" uid="uid://jw0lal71ipa0" path="res://scenes/levels/level3-5.tscn" id="21_1ivhx"]
 [ext_resource type="AudioStream" uid="uid://brbl0obpy5a6r" path="res://assets/sfx/select.wav" id="21_pmpnp"]
 
@@ -52,7 +52,7 @@ test_level = ExtResource("4_20ne4")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("5_angnu")
-levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("14_1krmm"), ExtResource("15_8fe1j"), ExtResource("14_tooy1"), ExtResource("10_kkfhb"), ExtResource("18_d84l1"), ExtResource("19_l41ok"), ExtResource("20_8mjxx"), ExtResource("21_1ivhx")])
+levels = Array[PackedScene]([ExtResource("6_j54fc"), ExtResource("7_djj7f"), ExtResource("9_f6le7"), ExtResource("9_3j1c6"), ExtResource("8_cgmvi"), ExtResource("12_vuf7b"), ExtResource("13_dy7lm"), ExtResource("14_1krmm"), ExtResource("15_8fe1j"), ExtResource("14_tooy1"), ExtResource("18_d84l1"), ExtResource("18_wm42b"), ExtResource("19_l41ok"), ExtResource("20_m2q5v"), ExtResource("21_1ivhx")])
 
 [node name="Levels" type="Node" parent="."]
 
